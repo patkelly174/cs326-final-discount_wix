@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Group-Project</title>
+    <link rel="stylesheet" href="duality.css"/>
+    <script src = "duality.js" defer></script>
+  </head>
+  <body>
+    <center>
+      <h1>Duality</h1>
+      <br />
+    </center>
+    <ul class = "tabs">
+        <li data-tab-target="#home" class = "active tab">Home</li>
+        <li data-tab-target="#about" class = "tab">About Us</li>
+        <li data-tab-target="#login" class = "tab">Login/Signup</li>
+    </ul>
+    
+    <div class="tab-content">
+        <div id="home" data-tab-content class = "active">
+            <h1>Home</h1>
+            <p>INFO ON HOME</p>
+        </div>
+        <div id="about" data-tab-content>
+            <center>
+                <h1>We Are Duality</h1>
+            </center>
+            <p>Our application is two folds based on the personal creation. A person would input information 
+                based on monthly spendings and savings, and depending on which account-type they choose we 
+                would either organize an individual’s finances and provide saving/spending tips; or focus solely 
+                on suggesting different spending habits geared towards benefitting the local community.
+            </p>
+            <p>
+                Although there are many finance management apps out there, what sets us apart is that we guide 
+                people towards a more budget-friendly or humanitarian-like lifestyle if they so desire.
+            </p>
+            <p>
+               There are numerous features to this application. If a person chooses the more budget-friendly account, 
+               we would suggest part time jobs if their rate of spending is greater than the rate of savings. We 
+               would do this by taking in an individual interest and availability and use our automated technology 
+               to find a job most suited for them. Another functionality this account would have is that it offers 
+               local deals so it is more accessible. For the humanitarian based account, we would focus on suggesting 
+               ways to distribute surplus wealth through various local organizations or non-profit groups. 
+            </p>
+
+        </div>
+        <div id="login" data-tab-content>
+            <center>
+            <h1>Login/Signup</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" /><br><br>
+            <label for="password">Password:</label>
+            <input type="text" id="password" /><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" /><br><br>
+            <input type="button" value = "Go" />
+            </center>
+        </div>
+    </div>
+  </body>
+</html>
