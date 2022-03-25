@@ -85,42 +85,6 @@
   background-color: rgb(97, 207, 53);
 }
 
-<<<<<<< HEAD
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  label{
-    font-size: 150%;
-  }
-
-  input {
-    margin-bottom: 10px;
-    font-size: 125%;
-  }
-  
-  input {
-    height: 20px;
-    flex: 0 0 200px;
-    margin-left: 1px;
-  }
-
-  #pie-chart {
-    height: 400px;
-    width: 400px;
-  }
-
-  #pie-chart {
-    border-radius: 200%;
-    size: 200%;
-    background: conic-gradient(brown 0.00%, black 0.00% 0.55%, blue 0.55% 6.08%, green 6.08% 13.68%, yellow 13.68% 23.27%, orange 23.27% 40.47%, red 40.47%);
-  }
-
-  
-=======
 #change1:hover, #change2:hover, #change3:hover{
   background-color: rgb(250, 102, 83);
 }
@@ -131,4 +95,3 @@
   display: table;
   clear: both;
 }
->>>>>>> b9bf816299e9f9909dfdf03d2474e47580a20a59
