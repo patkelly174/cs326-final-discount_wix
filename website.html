@@ -6,7 +6,7 @@
   </head>
   <body>
     <center>
-      <h1>Welcome to Frugality!</h1>
+      <h1 class = "title">Welcome to Frugality!</h1>
       <!--<img
         alt="generic-family"
         src=https://usalg.org/wp-content/uploads/2021/01/Budgeting-1.jpg
@@ -19,15 +19,16 @@
         <p class="toc_title">Table of Contents</p>
         <ul class="toc_list">
           <li><a href="#First_Point_Header">Home</a>
-          <li><a href="#First_Sub_Point_1">Your Information</a></li>
-          <li><a href="#First_Sub_Point_2">Job Suggestions</a></li>
+          <li><a href="#Second_Point_Header">Your Information</a></li>
+          <li><a href="#Fifth_Point_Header">Weekly Spending Details</a></li>
+          <li><a href="#Third_Point_Header">Job Suggestions</a></li>
           </li>
-        <li><a href="#Second_Point_Header">Local Grocery Deals</a></li>
+        <li><a href="#Fourth_Point_Header">Local Grocery Deals</a></li>
         </ul>
         </div>
-        
-        <div class="media media-flip">
+        <h2 id="First_Point_Header" class = "size">Home</h2>
 
+        <div class="media media-flip">
             <div class="img">
                 <img src="https://usalg.org/wp-content/uploads/2021/01/Budgeting-1.jpg" alt="Balloons"
                 width = "400"
@@ -45,6 +46,7 @@
                 <!--An optional footer goes here. -->
             </div>
             </div>
+
         <center>
         <div class="row">
             <div class="column" id = "change1">
@@ -61,6 +63,39 @@
             </div>
         </div>
         </center>
+
+        <h3 id="Second_Point_Header" class = "size">Your Information</h3>
+        <form>
+            <label for = "name">Your Name: &nbsp&nbsp&nbsp</label>
+            <input type = "text" id = "name"/>
+            <label for = "income">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Income: &nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <input type = "text" id = "income"/>
+            <br /><br />
+            <label for = "rent">Rent: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <input type = "text" id = "rent"/>
+            <label for = "spending">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Spending: &nbsp&nbsp</label>
+            <input type = "text" id = "spending"/>
+            <br /><br />
+            <label for = "interests">Job Interests: &nbsp&nbsp</label>
+            <input type = "text" id = "interests"/>
+            <label for = "savings">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Savings: &nbsp&nbsp&nbsp&nbsp</label>
+            <input type = "text" id = "savings"/>
+            <br /><br />
+        </form>
+
+        <h4 id = "Fifth_Point_Header" class = "size">Weekly Spending Details</h4>
+        <br />
+        <div id="pie-chart"></div>
+        <br />
+        <h5 id="Third_Point_Header" class = "size">Job Suggestions</h5>
+        <br />
+          <p>TBD...</p>
+        <br />
+
+        <h6 id="Fourth_Point_Header" class = "size">Local Grocery Deals</h6>
+        <br />
+          <p>TBD...</p>
+        <br />
       <form>
         <!-- <label for="key">Key:</label>
         <input type="text" id="key" />

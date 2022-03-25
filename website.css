@@ -20,6 +20,14 @@
     list-style: outside none none;
 }
 
+.size{
+  font-size: 225%;
+}
+
+.title{
+  font-size: 300%;
+}
+
 @media (min-width: 500px) {
     .media {
         display: grid;
@@ -87,4 +95,31 @@
     display: table;
     clear: both;
   }
+
+  label{
+    font-size: 150%;
+  }
+
+  input {
+    margin-bottom: 10px;
+    font-size: 125%;
+  }
+  
+  input {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 1px;
+  }
+
+  #pie-chart {
+    height: 400px;
+    width: 400px;
+  }
+
+  #pie-chart {
+    border-radius: 200%;
+    size: 200%;
+    background: conic-gradient(brown 0.00%, black 0.00% 0.55%, blue 0.55% 6.08%, green 6.08% 13.68%, yellow 13.68% 23.27%, orange 23.27% 40.47%, red 40.47%);
+  }
+
   
