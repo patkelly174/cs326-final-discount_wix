@@ -3,7 +3,7 @@ COMPSCI 326 - Web Programming Final Project
 
 Team Name: Discount Wix
 
-Application Name: Frugality  // Subject to Change
+Application Name: Duality  // Subject to Change
 
 SECTION 1: Team Overview
 
@@ -15,19 +15,12 @@ SECTION 1: Team Overview
 
 SECTION 2: Innovative Idea
 
-    Our application seeks to find the cheapest version of a given product. This can range from household objects like
-    chairs to things like gas. The user will be asked to input a location from the US (e.g. Boston, MA), the item
-    name, and a radius that the item should be found within. Once input, the application will send back information on
-    the cheapest variation of that item within the radius centered around the location. It would send back things like
-    address, price, whether it's in stock (if applicable), and potentially rating and item quality down the line. It's
-    somewhat similar to Amazon, except you don't have to look for the shortest price yourself, the app will! Also,
-    it's more geared towards in-person transactions in comparison to Amazon's online ones.
+    Our application is two folds based on the personal creation. A person would input information based on monthly spendings and savings, and depending on which account-type they choose we would either organize an individual’s finances and provide saving/spending tips; or focus solely on suggesting different spending habits geared towards benefitting the local community.
+
+    Although there are many finance management apps out there, what sets us apart is that we guide people towards a more budget-friendly or humanitarian-like lifestyle if they so desire.
+
 
 
 SECTION 3: 
 
-    The main part of this app will sort things like distance, price, or popularity in increasing order. After which
-    the app will return an item with the lowest price, lowest distance, and possibly highest popularity. Google maps
-    will also be important for seeing how much is within our location radius. If quality and average rating is
-    successfully implemented down the line, then our app would possibly accumulate common key words used to the
-    descirbe the product in reviews and send it back to the user.
+    There are numerous features to this application. If a person chooses the more budget-friendly account, we would suggest part time jobs if their rate of spending is greater than the rate of savings. We would do this by taking in an individual interest and availability and use our automated technology to find a job most suited for them. Another functionality this account would have is that it offers local deals so it is more accessible. For the humanitarian based account, we would focus on suggesting ways to distribute surplus wealth through various local organizations or non-profit groups. 
