@@ -1,7 +1,7 @@
-# Divsion of Labor: <br>
-    Patrick Kelly: Coding/Merging Pages<br>
-    Alex Chan: Coding and Wireframes<br>
-    Cecilia Chan: Coding and Wireframes<br>
+# Divsion of Labor:
+    Patrick Kelly: Coding/Merging Pages
+    Alex Chan: Coding and Wireframes
+    Cecilia Chan: Coding and Wireframes
     Jinsoo Yang: Wireframes
 
  # User Interactions (Same as milestone 0): <br>
