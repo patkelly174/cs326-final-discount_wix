@@ -4,6 +4,7 @@
     <title>Group-Project</title>
     <link rel="stylesheet" href="duality.css"/>
     <script src = "duality.js" defer></script>
+    <script src = "budget.js" defer></script>
   </head>
   <body>
     <center>
@@ -55,6 +56,29 @@
                     <p>Some text..</p>
                   </div>
               </div>
+              </center>
+              <center>
+                <h1 id = "expense">Expense Tracker</h1>
+                <hr>
+                <div id = "flex">
+                  <div class = "budget">
+                    <h2>Total Budget: <span id = "totalBudget"> 0</span></h2>
+                    <h2>Current Balance: <span id = "currentBalance"> 0</span></h2>
+                    <br><h2>Add money to budget</h2>
+                    <input type="number" placeholder="add money" id ="money">
+                    <button onclick = "addMoney()" id = "addMoney">Add Money</button>
+                    <h2>Add Expenses</h2>
+                    <input type = "text" placeholder="expense name" id = "expenseName"> <br><br>
+                    <input type = "number" placeholder="add expense" id = "expenseAmount"> <br><br><br>
+                      <button onclick = "addExpense()" id = "addExpense">Add Expense</button>
+                  </div>
+                  <div class = "addedExpenses">
+                    <h2>Added Expenses</h2>
+                    <div id = "addedExpenses">
+                    </div>
+                  </div>
+                </div>
+           
               </center>
               <div>              
                 <h3 id="Second_Point_Header" class = "size">Your Information</h3>

@@ -125,7 +125,7 @@
   #change3{
     background-color: rgb(97, 207, 53);
   }
-========
+
 #toc_container {
   background: #ffffff none repeat scroll 0 0;
   border: 5px solid rgb(0, 0, 0);
@@ -223,4 +223,41 @@
   display: table;
   clear: both;
 }
->>>>>>>> 50638a17933e67e22c1c54e267db205344b09ef2:website.css
+
+.budget #addMoney {
+  border-radius: 0px 8px 8px 0px;
+  padding: 10px;
+  margin-left: -3px;
+  outline: black;
+  border: #AAA;
+}
+
+.budget #addMoney:hover {
+  background-color: bisque;
+  color: white;
+  transition: 1s all;
+}
+
+#expenseName, #expenseAmount {
+  width: 280px;
+}
+
+.budget #addExpense {
+  width: 100px;
+  padding: 7px;
+  border-radius: 10px 0px;
+  border: none;
+  outline: none;
+  margin-left: 90px;
+}
+
+.budget #addExpense:hover {
+  background-color: bisque;
+  color: white;
+  transition: 1s all;
+}
+
+#addedExpenses {
+  font-size: 30px;
+  line-height: 1.5;
+}
