@@ -3,7 +3,6 @@ import { constants } from 'fs';
 import readline from 'readline';
 
 // The file we want to store data in.
-
 const userFile = 'userData.json';
 
 async function init() {
@@ -15,15 +14,6 @@ async function init() {
     await writeFile(userFile, '{}');
   }
 }
-
-// CRUD Operations
-//
-//   The following are basic CRUD operations:
-//
-//   - Create      => createPerson()
-//   - Read        => readPerson()
-//   - Update      => updatePerson()
-//   - Delete      => deletePerson()
 
 export async function createAccount(email) {
   const user = { name: "none", job: "none", rent: 0, income: 0, spending: 0, saving: 0};
@@ -38,7 +28,5 @@ export async function createAccount(email) {
     return undefined;
   }
 }
-
-  
   
 init();
