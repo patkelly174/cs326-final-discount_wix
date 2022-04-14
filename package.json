@@ -1,0 +1,28 @@
+{
+  "name": "cs326-final-discount_wix",
+  "version": "1.0.0",
+  "description": "User Info",
+  "type": "module",
+  "main": "budget.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patkelly174/cs326-final-discount_wix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patkelly174/cs326-final-discount_wix/issues"
+  },
+  "homepage": "https://github.com/patkelly174/cs326-final-discount_wix#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  }
+}
