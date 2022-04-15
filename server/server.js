@@ -9,8 +9,8 @@ const ACCOUNT_FILE = 'account.json';
 
 // Returns a function that will read a score file.
 
-async function createAccount(email) {
-  const user = {email: email, name: "none", job: "none", rent: 0, income: 0, spending: 0, saving: 0};
+async function createAccount(email, password) {
+  const user = {email: email, password: password, name: "none", job: "none", rent: 0, income: 0, spending: 0, saving: 0};
   try {
     const data = await readFile(ACCOUNT_FILE, 'utf8');
     const userDirectory = JSON.parse(data);
@@ -27,11 +27,11 @@ async function createAccount(email) {
   }
 }
  
-async function readAccount(email) {
+async function readAccount(email, password) {
   try {
     const data = await readFile(ACCOUNT_FILE, 'utf8');
     const userDirectory = JSON.parse(data);
-    return userDirectory.filter(obj => obj.email === email);
+    return userDirectory.filter(obj => obj.email === email && obj.password === password);
   } catch (err) {
     console.error('Error reading file: ', err);
     return undefined;
@@ -70,7 +70,7 @@ app.use('/client', express.static('client'));
 
 
 app.post('/createAccount', async (req, res) => {
-  const bool = await createAccount(req.query.email);
+  const bool = await createAccount(req.query.email, req.query.password);
   console.log(bool);
   if(bool !== false){
     res.status(200).json({"status": "success"});
@@ -82,7 +82,7 @@ app.post('/createAccount', async (req, res) => {
 
 
 app.get('/readAccount', async (req, res) => {
-  const account = await readAccount(req.query.email);
+  const account = await readAccount(req.query.email, req.query.password);
   res.status(200).json(account);
 });
 
