@@ -1,5 +1,5 @@
 import { all } from 'express/lib/application';
-import * as curd from './crud.js'
+import * as curd from './crud2.js'
 
 const emailText = document.getElementById('email');
 const nameText = document.getElementById("name");
