@@ -73,7 +73,7 @@ app.post('/createAccount', async (req, res) => {
   const bool = await createAccount(req.query.email, req.query.password);
   console.log(bool);
   if(bool !== false){
-    res.status(200).json({"status": "success"});
+    res.status(200).json(bool);
   }
   else{
     res.status(400).json({"status": "failure"});
