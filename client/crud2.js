@@ -16,11 +16,11 @@ export async function readAccount(email) {
     const data = await response.json();
     return data;
   }
-  
+
   export async function readALlUsers() {
     const response = await fetch('/person/all', {
       method: 'GET',
     });
     const data = await response.json();
     return data;
-  }
+  } 

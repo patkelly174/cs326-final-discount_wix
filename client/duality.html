@@ -5,30 +5,28 @@
     <link rel="stylesheet" href="duality.css"/>
     <script src = "duality.js" defer></script>
     <script src = "budget.js" defer></script>
+    <script src = "main.js" defer></script>
   </head>
   <body>
     <center>
       <h1>Duality</h1>
       <br />
     </center>
-    <ul class = "tabs">
+    <div class = "tabs">
         <li data-tab-target="#home" class = "active tab">Home</li>
         <li data-tab-target="#about" class = "tab">About Us</li>
         <li data-tab-target="#login" class = "tab">Login/Signup</li>
-    </ul>
+    </div>
     
     <div class="tab-content">
-
         <div id="home" data-tab-content class = "active">
             <h1>Home</h1>
-
             <div class="media media-flip">
               <div class="img">
                   <img src="https://usalg.org/wp-content/uploads/2021/01/Budgeting-1.jpg" alt="Balloons"
                   width = "400"
                   height = "400">
               </div>
-
               <div class="content">
                 <p>Here your will find your current Balance and Financial Status based on input information.</p>
                 <br/>
@@ -40,7 +38,6 @@
                 <!--An optional footer goes here. -->
             </div>
             </div>
-
             <center>
               <div class="row">
                   <div class="column" id = "change1">
@@ -94,7 +91,7 @@
                     <input type = "text" id = "spending"/>
                     <br /><br />
                     <label for = "interests">Job Interests: &nbsp&nbsp</label>
-                    <input type = "text" id = "interests"/>
+                    <input type = "text" id = "job"/>
                     <label for = "savings">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Savings: &nbsp&nbsp&nbsp&nbsp</label>
                     <input type = "text" id = "savings"/>
                     <br /><br />
@@ -117,9 +114,6 @@
 
 
         </div>
-
-
-
         <div id="about" data-tab-content>
             <center>
                 <h1>We Are Duality</h1>
@@ -146,13 +140,11 @@
         <div id="login" data-tab-content>
             <center>
             <h1>Login/Signup</h1>
-            <label for="username">Username:</label>
-            <input type="text" id="username" /><br><br>
-            <label for="password">Password:</label>
-            <input type="text" id="password" /><br><br>
             <label for="email">Email:</label>
             <input type="text" id="email" /><br><br>
-            <input type="button" value = "Go" />
+            <label for="password">Password:</label>
+            <input type="text" id="password" /><br><br>
+            <input type="button" id="create" value = "Go" />
             </center>
         </div>
     </div>

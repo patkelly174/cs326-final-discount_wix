@@ -4,7 +4,7 @@ import * as crud from './crud.js';
 
 async function basicServer(request, response) {
   // TODO: Implement the server
-  
+
   const parsedUrl = url.parse(request.url, true);
   const pathname = parsedUrl.pathname;
   const query = parsedUrl.query;
@@ -34,4 +34,4 @@ async function basicServer(request, response) {
 // Start the server on port 3000.
 http.createServer(basicServer).listen(3000, () => {
   console.log('Server started on port 3000');
-});
+}); 
