@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Group-Project</title>
+    <link rel="stylesheet" href="duality.css"/>
+    <script src = "duality.js" defer></script>
+    <script src = "budget.js" defer></script>
+    <script src = "main.js" defer></script>
+  </head>
+  <body>
+    <center>
+      <h1>Duality</h1>
+      <br />
+    </center>
+    <div class = "tabs">
+        <li data-tab-target="#home" class = "active tab">Home</li>
+        <li data-tab-target="#about" class = "tab">About Us</li>
+        <li data-tab-target="#login" class = "tab">Login/Signup</li>
+    </div>
+    
+    <div class="tab-content">
+        <div id="home" data-tab-content class = "active">
+            <h1>Home</h1>
+            <div class="media media-flip">
+              <div class="img">
+                  <img src="https://usalg.org/wp-content/uploads/2021/01/Budgeting-1.jpg" alt="Balloons"
+                  width = "400"
+                  height = "400">
+              </div>
+              <div class="content">
+                <p>Here your will find your current Balance and Financial Status based on input information.</p>
+                <br/>
+                <p>Balance:</p>
+                <br/>
+                <p>Status:</p>
+            </div>
+            <div class="footer">
+                <!--An optional footer goes here. -->
+            </div>
+            </div>
+            <center>
+              <div class="row">
+                  <div class="column" id = "change1">
+                      <h2>Saving</h2>
+                      <p>Some text..</p>
+                  </div>
+                  <div class="column" id = "change2">
+                    <h2>Budgeting</h2>
+                    <p>Some text..</p>
+                  </div>
+                  <div class="column" id = "change3">
+                    <h2>Spending</h2>
+                    <p>Some text..</p>
+                  </div>
+              </div>
+              </center>
+              <center>
+                <h1 id = "expense">Expense Tracker</h1>
+                <hr>
+                <div id = "flex">
+                  <div class = "budget">
+                    <h2>Total Budget: <span id = "totalBudget"> 0</span></h2>
+                    <h2>Current Balance: <span id = "currentBalance"> 0</span></h2>
+                    <br><h2>Add money to budget</h2>
+                    <input type="number" placeholder="add money" id ="money">
+                    <button onclick = "addMoney()" id = "addMoney">Add Money</button>
+                    <h2>Add Expenses</h2>
+                    <input type = "text" placeholder="expense name" id = "expenseName"> <br><br>
+                    <input type = "number" placeholder="add expense" id = "expenseAmount"> <br><br><br>
+                      <button onclick = "addExpense()" id = "addExpense">Add Expense</button>
+                  </div>
+                  <div class = "addedExpenses">
+                    <h2>Added Expenses</h2>
+                    <div id = "addedExpenses">
+                    </div>
+                  </div>
+                </div>
+           
+              </center>
+              <div>              
+                <h3 id="Second_Point_Header" class = "size">Your Information</h3>
+                <form>
+                    <label for = "name">Your Name: &nbsp&nbsp&nbsp</label>
+                    <input type = "text" id = "name"/>
+                    <label for = "income">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Income: &nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                    <input type = "text" id = "income"/>
+                    <br /><br />
+                    <label for = "rent">Rent: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                    <input type = "text" id = "rent"/>
+                    <label for = "spending">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Spending: &nbsp&nbsp</label>
+                    <input type = "text" id = "spending"/>
+                    <br /><br />
+                    <label for = "interests">Job Interests: &nbsp&nbsp</label>
+                    <input type = "text" id = "job"/>
+                    <label for = "savings">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Savings: &nbsp&nbsp&nbsp&nbsp</label>
+                    <input type = "text" id = "savings"/>
+                    <br /><br />
+                </form>
+              </div>
+              <h4 id = "Fifth_Point_Header" class = "size">Weekly Spending Details</h4>
+              <br />
+              <div id="pie-chart"></div>
+              <br />
+              <h5 id="Third_Point_Header" class = "size">Job Suggestions</h5>
+              <br />
+                <p>TBD...</p>
+              <br />
+      
+              <h6 id="Fourth_Point_Header" class = "size">Local Grocery Deals</h6>
+              <br />
+                <p>TBD...</p>
+              <br />
+              
+
+
+        </div>
+        <div id="about" data-tab-content>
+            <center>
+                <h1>We Are Duality</h1>
+            </center>
+            <p>Our application is two folds based on the personal creation. A person would input information 
+                based on monthly spendings and savings, and depending on which account-type they choose we 
+                would either organize an individual’s finances and provide saving/spending tips; or focus solely 
+                on suggesting different spending habits geared towards benefitting the local community.
+            </p>
+            <p>
+                Although there are many finance management apps out there, what sets us apart is that we guide 
+                people towards a more budget-friendly or humanitarian-like lifestyle if they so desire.
+            </p>
+            <p>
+               There are numerous features to this application. If a person chooses the more budget-friendly account, 
+               we would suggest part time jobs if their rate of spending is greater than the rate of savings. We 
+               would do this by taking in an individual interest and availability and use our automated technology 
+               to find a job most suited for them. Another functionality this account would have is that it offers 
+               local deals so it is more accessible. For the humanitarian based account, we would focus on suggesting 
+               ways to distribute surplus wealth through various local organizations or non-profit groups. 
+            </p>
+
+        </div>
+        <div id="login" data-tab-content>
+            <center>
+            <h1>Login/Signup</h1>
+            <label for="email">Email:</label>
+            <input type="text" id="email" /><br><br>
+            <label for="password">Password:</label>
+            <input type="text" id="password" /><br><br>
+            <input type="button" id="create" value = "Go" />
+            </center>
+        </div>
+    </div>
+  </body>
+</html>
