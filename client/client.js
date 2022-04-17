@@ -1,37 +1,37 @@
-import { all } from 'express/lib/application';
-import * as curd from './crud2.js'
-
-const emailText = document.getElementById('email');
+const email = document.getElementById('signup-email');
+const password = document.getElementById('signup-password');
 const nameText = document.getElementById("name");
-const jobText = document.getElementById('job');
-const rentAmount = document.getElementById('rent');
-const incomeAmount = document.getElementById('income');
-const spendingAmount = document.getElementById('spending');
-const savingAmount = document.getElementById('saving');
-const createButton = document.getElementById('create');
-const readButton = document.getElementById('read');
+const job = document.getElementById('job');
+const rent = document.getElementById('rent');
+const income = document.getElementById('income');
+const spending = document.getElementById('spending');
+const saving = document.getElementById('saving');
+const signup = document.getElementById('signup-button');
+const address = document.getElementById('signup-address');
+const city = document.getElementById('signup-city');
+const state = document.getElementById('signup-state');
+const zip = document.getElementById('signup-zip');
 
-async function allUsers() {
-    const allUsers = await curd.readAllUsers();
-    all.innerHTML = JSON.stringify(allUsers);
-}
 
-createAccount.addEventListener('click', async (e) => {
-    const email = emailText.value;
-    const name = nameText.value;
-    const job = jobText.value;
-    const rent = rentAmount.value;
-    const income = incomeAmount.value;
-    const spending = spendingAmount.value;
-    const saving = savingAmount.value;
-    const user = await curd.createAccount(email, name, job, rent, income, spending, saving);
-    output.innerHTML = JSON.stringify(user);
-    await allUsers();
+signup.addEventListener('click', async () => {
+    try {
+        let url= `http://127.0.0.1:3000/createAccount?email=${email.value}&password=${password.value}&address=${address.value}&city=${city.value}&state=${state.value}&zip=${zip.value}`;
+        let response = await fetch(url, {method: 'POST', headers: {accept: 'application/json'}, mode: 'same-origin' });
+        if (!response.ok) {
+          throw new Error(`Error! status: ${response.status}`);
+        }
+        const result = await response.json();
+    } 
+    catch (err) {
+        console.log(err);
+    }
+    /*
+    nameText.value = response.name;
+    job.value = 0;
+    rent.value = response.rent;
+    income.value = response.income;
+    spending.value = response.spending;
+    saving.value = response.saving;
+    */
 });
 
-readAccount.addEventListener('click', async (e) => {
-    const email = emailText.value;
-    const user = await crud.readAccount(email);
-    output.innerHTML = JSON.stringify(person);
-    await allUsers();
-})
