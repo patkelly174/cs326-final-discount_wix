@@ -85,7 +85,6 @@
   background-color: rgb(97, 207, 53);
 }
 
-<<<<<<< HEAD
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -120,7 +119,6 @@
   }
 
   
-=======
 #change1:hover, #change2:hover, #change3:hover{
   background-color: rgb(250, 102, 83);
 }
@@ -131,4 +129,3 @@
   display: table;
   clear: both;
 }
->>>>>>> b9bf816299e9f9909dfdf03d2474e47580a20a59
