@@ -36,7 +36,8 @@ app.use('/client', express.static('client'));
 
 
 app.post('/createAccount', async (req, res) => {
-  const bool = await createAccount(req.query.email, req.query.password, req.query.address, req.query.city, req.query.state, req.query.zip);
+  console.log(req.body.email);
+  const bool = await createAccount(req.body.email, req.body.password, req.body.address, req.body.city, req.body.state, req.body.zip);
   console.log(bool);
   if(bool !== false){
     res.status(200).json(bool);
