@@ -24,7 +24,7 @@ function addExpense() {
         currentBalance -= expenseAmount;
         document.getElementById("currentBalance").innerHTML = currentBalance;
         let para = document.createElement('p');
-        para.innerHTML = "Expense Name : ${expenseName} <br> Expense Amount: ${expenseAmount}";
+        para.innerHTML = `Expense Name : ${expenseName} <br> Expense Amount: ${expenseAmount}`;
         document.getElementById("addedExpenses").appendChild(para);
     } else {
         alert("Amount is higher than your current balance");
