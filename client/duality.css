@@ -283,3 +283,14 @@ body {
   max-width:100%;
   max-height:100%;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #6ab446;
+  border-color: #fff; 
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #5f9444;
+  border-color: #fff; 
+}
