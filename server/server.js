@@ -27,11 +27,11 @@ async function createAccount(email, password) {
   }
 }
  
-async function readAccount(email, password) {
+async function readAccount(email) {
   try {
     const data = await readFile(ACCOUNT_FILE, 'utf8');
     const userDirectory = JSON.parse(data);
-    return userDirectory.filter(obj => obj.email === email && obj.password === password);
+    return userDirectory.filter(obj => obj.email === email);
   } catch (err) {
     console.error('Error reading file: ', err);
     return undefined;
@@ -100,7 +100,7 @@ app.post('/createAccount', async (req, res) => {
 
 
 app.get('/readAccount', async (req, res) => {
-  const account = await readAccount(req.query.email, req.query.password);
+  const account = await readAccount(req.query.email);
   res.status(200).json(account);
 });
 
@@ -110,7 +110,7 @@ app.get('/readAllAccounts', async (req, res) => {
 });
 
 app.post('/updateAccount', async (req, res) => {
-  const options = req.query;
+  const options = req.body;
   const test = await updateAccount(options, options.email, options.password);
   if(test !== false){
     res.status(200).json(test);
