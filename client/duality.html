@@ -179,12 +179,14 @@
                local deals so it is more accessible. For the humanitarian based account, we would focus on suggesting 
                ways to distribute surplus wealth through various local organizations or non-profit groups. 
             </p>
-
+            <form>
+              <input type="button" value="Go back!" data-tab-target="#home">
+            </form>
         </div>
         
         <div id="overview" data-tab-content>
           <center>
-            <button id="delete-button" type="submit" class="btn btn-primary">DELETE ACCOUNT</button>
+            <button id="delete-button" type="submit" class="btn btn-primary" data-tab-target="#home">DELETE ACCOUNT</button>
           </center>
         </div>
    
@@ -201,7 +203,7 @@
               <label for="login-password">Password</label>
               <input type="password" class="form-control" id="login-password" placeholder="Password">
             </div>
-            <button id="login-button" type="submit" class="btn btn-primary">Submit</button>
+            <button id="login-button" type="submit" class="btn btn-primary" data-tab-target="#home">Submit</button>
             <div id = "home" data-tab-content></div>
           </form>
           </div>
@@ -294,7 +296,7 @@
                   <input type="text" class="form-control" id="signup-zip">
                 </div>
               </div>
-              <button id="signup-button" type="submit" class="btn btn-primary">Sign up</button>
+              <button id="signup-button" type="submit" class="btn btn-primary" data-tab-target="#home">Sign up</button>
             </form>
           </div>
         </div>
