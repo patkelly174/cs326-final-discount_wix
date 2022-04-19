@@ -3,18 +3,25 @@ const tabContents = document.querySelectorAll('[data-tab-content]');
 
 // name income rent spending job savings
 const email = document.getElementById('email');
-//const password = document.getElementById('password');
+const signupEmail = document.getElementById('signup-email');
+const password = document.getElementById('signup-password');
 const namer = document.getElementById('name');
 const income = document.getElementById('income');
 const rent = document.getElementById('rent');
 const spending = document.getElementById('spending');
 const job = document.getElementById('job');
 const savings = document.getElementById('savings');
+const address = document.getElementById('signup-address');
+const city = document.getElementById('signup-city');
+const state = document.getElementById('signup-state');
+const zip = document.getElementById('signup-zip');
 
 let currentAccount = [];
 
 const updateButton = document.getElementById('update');
 const loginButton = document.getElementById('login-button');
+const del = document.getElementById('delete-button');
+const signup = document.getElementById('signup-button');
 
 tabs.forEach(tab => {
     tab.addEventListener('click', ()=>{
@@ -67,3 +74,30 @@ updateButton.addEventListener('click', async ()=>{
     };
    await fetch('/updateAccount', options);
 });
+
+del.addEventListener('click', async () => {
+    const options =  {
+        method: "POST",
+        body: JSON.stringify({
+            email: email.value,
+        }),
+        headers: { "Content-type": "application/json" }
+    };
+    await fetch('/deleteAccount', options);
+});
+
+signup.addEventListener('click', async () => {
+    const option = {
+        method: "POST",
+        body: JSON.stringify({
+            email: email.value,
+            password: password.value,
+            address: address.value,
+            city: city.value,
+            state: state.value,
+            zip: zip.value
+        }),
+        headers: {"Content-type": "application/json"}
+    };
+     const response = await fetch('/createAccount', option);
+ });

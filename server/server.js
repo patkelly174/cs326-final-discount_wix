@@ -67,6 +67,23 @@ async function updateAccount(info, email, password){
     return undefined;
   }
 }
+
+async function deleteAccount(email) {
+  try {
+    const data = await readFile(ACCOUNT_FILE, 'utf8');
+    let userDirectory = JSON.parse(data);
+    //Making sure account exists
+    if(userDirectory.filter(obj => obj.email === email).length === 0){
+      return false;
+    }
+    userDirectory = userDirectory.filter(obj => obj.email !== email);
+    await writeFile(ACCOUNT_FILE, JSON.stringify(userDirectory));
+  } catch (err) {
+    console.error('Error writing to file: ', err);
+    return undefined;
+  }
+}
+
 // Create the Express app and set the port number.
 const app = express();
 const port = 3000;
@@ -114,6 +131,18 @@ app.post('/updateAccount', async (req, res) => {
   const test = await updateAccount(options, options.email, options.password);
   if(test !== false){
     res.status(200).json(test);
+  }
+  else{
+    res.status(400).json({"status": "failure"});
+  }
+});
+
+app.post('/deleteAccount', async (req, res) => {
+  console.log(req.body.email);
+  const bool = await deleteAccount(req.body.email);
+  console.log(bool);
+  if(bool !== false){
+    res.status(200).json(bool);
   }
   else{
     res.status(400).json({"status": "failure"});
