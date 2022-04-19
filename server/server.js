@@ -53,7 +53,6 @@ async function updateAccount(info, email, password){
     const data = await readFile(ACCOUNT_FILE, 'utf8');
     const userDirectory = JSON.parse(data);
     const account = userDirectory.filter(obj => obj.email === email && obj.password === password);
-    // name: "none", job: "none", rent: 0, income: 0, spending: 0, saving: 0}
     account[0].name = info.name;
     account[0].job = info.job;
     account[0].rent = info.rent;
@@ -101,7 +100,8 @@ app.use('/client', express.static('client'));
 
 // Add your code here. 😎 👍
 // You can do this! Make sure you reference example applications covered in
-// class and in the associated exercises!
+// class and in the associated exercises
+
 
 
 app.post('/createAccount', async (req, res) => {
