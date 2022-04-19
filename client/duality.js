@@ -16,7 +16,6 @@ const city = document.getElementById('signup-city');
 const state = document.getElementById('signup-state');
 const zip = document.getElementById('signup-zip');
 
-let currentAccount = [];
 
 const updateButton = document.getElementById('update');
 const loginButton = document.getElementById('login-button');
