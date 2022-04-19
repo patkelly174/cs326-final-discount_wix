@@ -1,3 +1,4 @@
+const currentEmail = document.getElementById('email');
 const email = document.getElementById('signup-email');
 const password = document.getElementById('signup-password');
 const nameText = document.getElementById("name");
@@ -11,6 +12,7 @@ const address = document.getElementById('signup-address');
 const city = document.getElementById('signup-city');
 const state = document.getElementById('signup-state');
 const zip = document.getElementById('signup-zip');
+const del = document.getElementById('delete-button');
 
 
 signup.addEventListener('click', async () => {
@@ -27,5 +29,16 @@ signup.addEventListener('click', async () => {
         headers: {"Content-type": "application/json"}
     };
     const response = await fetch('/createAccount', option);
+});
+
+del.addEventListener('click', async () => {
+    const options =  {
+        method: "POST",
+        body: JSON.stringify({
+            email: currentEmail.value,
+        }),
+        headers: { "Content-type": "application/json" }
+    };
+    await fetch('/deleteAccount', options);
 });
 
