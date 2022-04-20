@@ -48,65 +48,105 @@
 
   <div class="tab-content">
     <br>
-    <div id="home" data-tab-content class="active">
+    <div id="home" data-tab-content>
       <div class="jumbotron">
         <h1 class="display-4">Welcome to Duality!</h1>
         <p class="lead">This webiste's main goal is to help you save money! We pride ourselves in helping the common
           individual cut costs all while keeping their same lifestlye and helping the community.</p>
         <hr class="my-4">
-        <p>Click the button below to sign in or sign-up!</p>
+        <p>Click the button below to sign-up!</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" data-tab-target="#login" role="button">Get Started</a>
+          <a class="btn btn-primary btn-lg" data-tab-target="#signup" role="button">Get Started</a>
         </p>
       </div>
 
       <div class="card-group">
         <div class="card">
-          <img class="card-img-top" src="../client/media/card1.jpg" alt="Card image cap">
+          <img class="card-img-top" src="../client/media/card1.jpg">
           <div class="card-body">
             <h5 class="card-title">Saving</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            <p class="card-text">We will take a look at your current finacial situation and recommend potential savings that will minimally affect your current lifestyle.</p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="../client/media/card2.jpeg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Budgeting</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="../client/media/card3.jpeg" alt="Card image cap">
+          <img class="card-img-top" src="../client/media/card2.jpeg">
           <div class="card-body">
             <h5 class="card-title">Spending</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This card has even longer content than the first to show that equal height action.</p>
-            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            <p class="card-text">One of our main focuses will to look at unecessary spending habits whether that be on large amounts online shopping or eating out too often.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="../client/media/card3.jpeg">
+          <div class="card-body">
+            <h5 class="card-title">Donating</h5>
+            <p class="card-text">After we free up some extra room in your budget or if your budget is already in great shape we will suggest some local charities and ways to give back to your local community.</p>
           </div>
         </div>
       </div>
 
+        <aside class="bg-success rounded-lg p-4 p-sm-5 mt-5">
+          <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+              <div class="mb-4 mb-xl-0">
+                  <div class="fs-3 fw-bold text-white">Let us save you money!</div>
+                  <div class="text-white-50">Click the button below to sign up or click login at top of page.</div>
+              </div>
+              <div class="ms-xl-4">
+                      <button class="btn btn-outline-light" data-tab-target="#signup" type="button">Sign up</button>
+              </div>
+          </div>
+      </aside>
+    </div>
 
-      <!-- <div class="row">
-                  <div class="column" id = "change1">
-                      <h2>Saving</h2>
-                      <p>Some text..</p>
-                  </div>
-                  <div class="column" id = "change2">
-                    <h2>Budgeting</h2>
-                    <p>Some text..</p>
-                  </div>
-                  <div class="column" id = "change3">
-                    <h2>Spending</h2>
-                    <p>Some text..</p>
-                  </div>
-              </div> -->
+    <div id="overview" class="container-fluid active" data-tab-content >
       <center>
-        <h1 id="expense">Expense Tracker</h1>
-        <hr>
+        <button id="delete-button" type="submit" class="btn btn-primary">DELETE ACCOUNT</button>
+      </center>
+
+      <div class="jumbotron jumbotron-fluid ">
+        <div class="container">
+          
+          <h1 class="display-4">Overview</h1>
+          <br>
+
+          <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-body">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase">
+                        Monthly Budget</div>
+                    <div class="h5 font-weight-bold" id="totalBudget">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow">
+                  <div class="card-body">
+                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
+                        Remaining Budget</div>
+                    <div id="currentBalance" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                  </div>
+              </div>
+          </div>
+    
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Total Expenses</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  
+      <center>
         <div id="flex">
           <div class="budget">
             <h2>Total Budget: <span id="totalBudget"> 0</span></h2>
@@ -131,8 +171,6 @@
       <div>
         <h3 id="Second_Point_Header" class="size">Your Information</h3>
         <form>
-          <label for = "email">Your Email: &nbsp&nbsp&nbsp</label>
-          <input type = "text" id = "email"/>
           <label for="name">Your Name: &nbsp&nbsp&nbsp</label>
           <input type="text" id="name" />
           <label for="income">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Income:
@@ -166,9 +204,8 @@
       <p>TBD...</p>
       <br />
 
-
-
     </div>
+
     <div id="about" data-tab-content>
 
       <header class="py-5">
@@ -215,6 +252,8 @@
                 budget we will supply you with various cost cutting measures such as local coupons and changes to your
                 current budget.</p>
             </div>
+            <div id = "home" data-tab-content></div>
+          </form>
           </div>
         </div>
       </section>
@@ -228,7 +267,7 @@
           <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
             <div class="col mb-5 mb-5 mb-xl-0">
               <div class="text-center">
-                <img class="img-fluid rounded-circle mb-4 px-4" src="" alt="..." />
+                <img class="img-fluid rounded-circle mb-4 px-4" src="../client/media/pat.jpeg" alt="..." />
                 <h5 class="fw-bolder">Patrick Kelly</h5>
                 <div class="fst-italic text-muted">University of Massachusetts Amherst '22</div>
               </div>
@@ -253,17 +292,12 @@
                 <h5 class="fw-bolder">Cecillia Chan</h5>
                 <div class="fst-italic text-muted">University of Massachusetts Amherst '23</div>
               </div>
+            </form>
             </div>
           </div>
         </div>
       </section>
 
-    </div>
-
-    <div id="overview" data-tab-content>
-      <center>
-        <button id="delete-button" type="submit" class="btn btn-primary">DELETE ACCOUNT</button>
-      </center>
     </div>
 
     <div id="login" data-tab-content>
