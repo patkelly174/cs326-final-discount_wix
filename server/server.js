@@ -27,11 +27,11 @@ async function createAccount(email, password) {
   }
 }
  
-async function readAccount(email, password) {
+async function readAccount(email) {
   try {
     const data = await readFile(ACCOUNT_FILE, 'utf8');
     const userDirectory = JSON.parse(data);
-    return userDirectory.filter(obj => obj.email === email && obj.password === password);
+    return userDirectory.filter(obj => obj.email === email);
   } catch (err) {
     console.error('Error reading file: ', err);
     return undefined;
@@ -48,6 +48,63 @@ async function readAllAccounts() {
   }
 }
 
+async function updateAccount(info, email, password){
+  try {
+    const data = await readFile(ACCOUNT_FILE, 'utf8');
+    const userDirectory = JSON.parse(data);
+    const account = userDirectory.filter(obj => obj.email === email && obj.password === password);
+    account[0].name = info.name;
+    account[0].job = info.job;
+    account[0].rent = info.rent;
+    account[0].income = info.income;
+    account[0].spending = info.spending;
+    account[0].saving = info.saving;
+    await writeFile(ACCOUNT_FILE, JSON.stringify(account));
+    return account;
+  } catch (err) {
+    console.error('Error reading file: ', err);
+    return undefined;
+  }
+}
+
+async function deleteAccount(email) {
+  try {
+    const data = await readFile(ACCOUNT_FILE, 'utf8');
+    let userDirectory = JSON.parse(data);
+    //Making sure account exists
+    if(userDirectory.filter(obj => obj.email === email).length === 0){
+      return false;
+    }
+    userDirectory = userDirectory.filter(obj => obj.email !== email);
+    await writeFile(ACCOUNT_FILE, JSON.stringify(userDirectory));
+  } catch (err) {
+    console.error('Error writing to file: ', err);
+    return undefined;
+  }
+}
+
+// async function updateAccount(info, email, password){
+//   try{
+//     const data = await readFile(ACCOUNT_FILE, 'utf8');
+//     const userDirectory = JSON.parse(data);
+//     const account = userDirectory.filter(obj => obj.email === email && obj.password === password);
+//     // name: "none", job: "none", rent: 0, income: 0, spending: 0, saving: 0 => assuming email and password stay the same
+//     account[0].name = info.name;
+//     account[0].job = info.job;
+//     account[0].rent =  info.rent;
+//     account[0].income = info.income;
+//     account[0].spending = info.spending;
+//     account[0].saving = info.saving;
+//     console.log(account);
+//     await writeFile(ACCOUNT_FILE, JSON.stringify(account));
+//     return account;
+//   } catch(err){
+//     console.error('Error writing to file: ', err);
+//     return undefined;
+//   }
+  
+  
+// }
 
 // Create the Express app and set the port number.
 const app = express();
@@ -66,7 +123,8 @@ app.use('/client', express.static('client'));
 
 // Add your code here. 😎 👍
 // You can do this! Make sure you reference example applications covered in
-// class and in the associated exercises!
+// class and in the associated exercises
+
 
 
 app.post('/createAccount', async (req, res) => {
@@ -82,7 +140,7 @@ app.post('/createAccount', async (req, res) => {
 
 
 app.get('/readAccount', async (req, res) => {
-  const account = await readAccount(req.query.email, req.query.password);
+  const account = await readAccount(req.query.email);
   res.status(200).json(account);
 });
 
@@ -91,6 +149,17 @@ app.get('/readAllAccounts', async (req, res) => {
   res.status(200).json(accounts);
 });
 
+
+app.post('/updateAccount', async (request, response) => {
+  const options = request.query;
+  const test = await updateAccount(options, options.email, options.password);
+  if(test !== false){
+    response.status(200).json(test);
+  }
+  else{
+    response.status(400).json({"status": "failure"});
+  }
+});
 
 // This matches all routes that are not defined.
 app.all('*', async (request, response) => {
