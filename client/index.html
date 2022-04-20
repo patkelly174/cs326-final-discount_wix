@@ -157,8 +157,8 @@
               </div>
               <div class="col-sm">
                 <label for="money">Remove Income Amount</label>
-                <input type="number" class="form-control" id="money">
-                <button class="btn btn-danger mt-3" onclick="addMoney()" id="addMoney">Remove income</button>
+                <input type="number" class="form-control" id="remove-money">
+                <button class="btn btn-danger mt-3" onclick="removeMoney()" id="removeMoney">Remove income</button>
               </div>
             </div>
           </div>
@@ -197,8 +197,8 @@
               <h5 class="text-center mb-4 pt-2">Remove expenses here!</h5>
               <div class="row">
                 <div class="form-group col-sm">
-                  <label for="expenseName">Expense Name</label>
-                  <input type="text" class="form-control" id="expenseName">
+                  <label for="removeExpense">Expense Name</label>
+                  <input type="text" class="form-control" id="removeExpense">
 
                 </div>
                 <div class="form-group col-sm">
@@ -230,16 +230,6 @@
 
       <center>
         <div id="flex">
-          <!-- <div class="budget">
-
-            <h2>Add money to budget</h2>
-            <input type="number" placeholder="add money" id="money">
-            <button onclick="addMoney()" id="addMoney">Add Money</button>
-            <h2>Add Expenses</h2>
-            <input type="text" placeholder="expense name" id="expenseName"> <br><br>
-            <input type="number" placeholder="add expense" id="expenseAmount"> <br><br><br>
-            <button onclick="addExpense()" id="addExpense">Add Expense</button>
-          </div> -->
           <div class="addedExpenses">
             <h2>Added Expenses</h2>
             <div id="addedExpenses">
