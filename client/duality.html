@@ -49,15 +49,15 @@
 
   <div class="tab-content">
     <br>
-    <div id="home" data-tab-content class="active">
+    <div id="home" data-tab-content>
       <div class="jumbotron">
         <h1 class="display-4">Welcome to Duality!</h1>
         <p class="lead">This webiste's main goal is to help you save money! We pride ourselves in helping the common
           individual cut costs all while keeping their same lifestlye and helping the community.</p>
         <hr class="my-4">
-        <p>Click the button below to sign in or sign-up!</p>
+        <p>Click the button below to sign-up!</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" data-tab-target="#login" role="button">Get Started</a>
+          <a class="btn btn-primary btn-lg" data-tab-target="#signup" role="button">Get Started</a>
         </p>
       </div>
 
@@ -66,8 +66,7 @@
           <img class="card-img-top" src="../media/card1.jpg">
           <div class="card-body">
             <h5 class="card-title">Saving</h5>
-            <p class="card-text">We will take a look at your current finaical situation and recommend potential savings that will minimally affect your current lifestyle.</p>
-            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            <p class="card-text">We will take a look at your current finacial situation and recommend potential savings that will minimally affect your current lifestyle.</p>
           </div>
         </div>
         <div class="card">
@@ -75,7 +74,6 @@
           <div class="card-body">
             <h5 class="card-title">Spending</h5>
             <p class="card-text">One of our main focuses will to look at unecessary spending habits whether that be on large amounts online shopping or eating out too often.</p>
-            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
           </div>
         </div>
         <div class="card">
@@ -83,29 +81,70 @@
           <div class="card-body">
             <h5 class="card-title">Donating</h5>
             <p class="card-text">After we free up some extra room in your budget or if your budget is already in great shape we will suggest some local charities and ways to give back to your local community.</p>
-            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
           </div>
         </div>
       </div>
 
+        <aside class="bg-success rounded-lg p-4 p-sm-5 mt-5">
+          <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+              <div class="mb-4 mb-xl-0">
+                  <div class="fs-3 fw-bold text-white">Let us save you money!</div>
+                  <div class="text-white-50">Click the button below to sign up or click login at top of page.</div>
+              </div>
+              <div class="ms-xl-4">
+                      <button class="btn btn-outline-light" data-tab-target="#signup" type="button">Sign up</button>
+              </div>
+          </div>
+      </aside>
+    </div>
 
-      <!-- <div class="row">
-                  <div class="column" id = "change1">
-                      <h2>Saving</h2>
-                      <p>Some text..</p>
+    <div id="overview" class="container-fluid active" data-tab-content >
+
+      <div class="jumbotron jumbotron-fluid ">
+        <div class="container">
+          
+          <h1 class="display-4">Overview</h1>
+          <br>
+
+          <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-body">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase">
+                        Monthly Budget</div>
+                    <div class="h5 font-weight-bold" id="totalBudget">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow">
+                  <div class="card-body">
+                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
+                        Remaining Budget</div>
+                    <div id="currentBalance" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                   </div>
-                  <div class="column" id = "change2">
-                    <h2>Budgeting</h2>
-                    <p>Some text..</p>
-                  </div>
-                  <div class="column" id = "change3">
-                    <h2>Spending</h2>
-                    <p>Some text..</p>
-                  </div>
-              </div> -->
+              </div>
+          </div>
+    
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Total Expenses</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+      
       <center>
-        <h1 id="expense">Expense Tracker</h1>
-        <hr>
         <div id="flex">
           <div class="budget">
             <h2>Total Budget: <span id="totalBudget"> 0</span></h2>
@@ -163,9 +202,8 @@
       <p>TBD...</p>
       <br />
 
-
-
     </div>
+
     <div id="about" data-tab-content>
 
       <header class="py-5">
