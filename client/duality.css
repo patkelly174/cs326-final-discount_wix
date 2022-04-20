@@ -262,7 +262,7 @@ body {
 }
 
 .navbar {
-  background:#85bb65;
+  background:#28a745;
 }
 .nav-link,
 .navbar-brand {
@@ -281,12 +281,12 @@ body {
 
 .btn-primary {
   color: #fff;
-  background-color: #85bb65;
+  background-color: #28a745;
   border-color: #fff; 
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #60814d;
+  background-color: #5f804c;
   border-color: #fff; 
 }
 
@@ -295,3 +295,4 @@ body {
   height: 20vw;
   object-fit: cover;
 }
+
