@@ -83,6 +83,29 @@ async function deleteAccount(email) {
   }
 }
 
+async function updateAccount(info, email, password){
+  try{
+    const data = await readFile(ACCOUNT_FILE, 'utf8');
+    const userDirectory = JSON.parse(data);
+    const account = userDirectory.filter(obj => obj.email === email && obj.password === password);
+    // name: "none", job: "none", rent: 0, income: 0, spending: 0, saving: 0 => assuming email and password stay the same
+    account[0].name = info.name;
+    account[0].job = info.job;
+    account[0].rent =  info.rent;
+    account[0].income = info.income;
+    account[0].spending = info.spending;
+    account[0].saving = info.saving;
+    console.log(account);
+    await writeFile(ACCOUNT_FILE, JSON.stringify(account));
+    return account;
+  } catch(err){
+    console.error('Error writing to file: ', err);
+    return undefined;
+  }
+  
+  
+}
+
 // Create the Express app and set the port number.
 const app = express();
 const port = 3000;
@@ -126,26 +149,15 @@ app.get('/readAllAccounts', async (req, res) => {
   res.status(200).json(accounts);
 });
 
-app.post('/updateAccount', async (req, res) => {
-  const options = req.body;
+
+app.post('/updateAccount', async (request, response) => {
+  const options = request.query;
   const test = await updateAccount(options, options.email, options.password);
   if(test !== false){
-    res.status(200).json(test);
+    response.status(200).json(test);
   }
   else{
-    res.status(400).json({"status": "failure"});
-  }
-});
-
-app.post('/deleteAccount', async (req, res) => {
-  console.log(req.body.email);
-  const bool = await deleteAccount(req.body.email);
-  console.log(bool);
-  if(bool !== false){
-    res.status(200).json(bool);
-  }
-  else{
-    res.status(400).json({"status": "failure"});
+    response.status(400).json({"status": "failure"});
   }
 });
 
