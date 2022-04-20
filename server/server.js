@@ -41,6 +41,37 @@ async function deleteAccount(email) {
   }
 }
 
+
+async function readAccount(email) {
+  try {
+    const data = await readFile(ACCOUNT_FILE, 'utf8');
+    const userDirectory = JSON.parse(data);
+    return userDirectory.filter(obj => obj.email === email);
+  } catch (err) {
+    console.error('Error reading file: ', err);
+    return undefined;
+  }
+}
+
+async function updateAccount(info, email, password){
+  try {
+    const data = await readFile(ACCOUNT_FILE, 'utf8');
+    const userDirectory = JSON.parse(data);
+    const account = userDirectory.filter(obj => obj.email === email && obj.password === password);
+    account[0].name = info.name;
+    account[0].job = info.job;
+    account[0].rent = info.rent;
+    account[0].income = info.income;
+    account[0].spending = info.spending;
+    account[0].saving = info.saving;
+    await writeFile(ACCOUNT_FILE, JSON.stringify(account));
+    return account;
+  } catch (err) {
+    console.error('Error reading file: ', err);
+    return undefined;
+  }
+}
+
 const app = express();
 const port = 3000;
 
@@ -75,6 +106,24 @@ app.post('/deleteAccount', async (req, res) => {
   }
 });
 
+
+app.get('/readAccount', async (req, res) => {
+  const account = await readAccount(req.query.email);
+  res.status(200).json(account);
+});
+
+
+
+app.post('/updateAccount', async (request, response) => {
+  const options = request.body;
+  const test = await updateAccount(options, options.email, options.password);
+  if(test !== false){
+    response.status(200).json(test);
+  }
+  else{
+    response.status(400).json({"status": "failure"});
+  }
+});
 
 // This matches all routes that are not defined.
 app.all('*', async (request, response) => {

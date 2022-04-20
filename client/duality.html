@@ -65,93 +65,169 @@
           <img class="card-img-top" src="../client/media/card1.jpg">
           <div class="card-body">
             <h5 class="card-title">Saving</h5>
-            <p class="card-text">We will take a look at your current finacial situation and recommend potential savings that will minimally affect your current lifestyle.</p>
+            <p class="card-text">We will take a look at your current finacial situation and recommend potential savings
+              that will minimally affect your current lifestyle.</p>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="../client/media/card2.jpeg">
           <div class="card-body">
             <h5 class="card-title">Spending</h5>
-            <p class="card-text">One of our main focuses will to look at unecessary spending habits whether that be on large amounts online shopping or eating out too often.</p>
+            <p class="card-text">One of our main focuses will to look at unecessary spending habits whether that be on
+              large amounts online shopping or eating out too often.</p>
           </div>
         </div>
         <div class="card">
           <img class="card-img-top" src="../client/media/card3.jpeg">
           <div class="card-body">
             <h5 class="card-title">Donating</h5>
-            <p class="card-text">After we free up some extra room in your budget or if your budget is already in great shape we will suggest some local charities and ways to give back to your local community.</p>
+            <p class="card-text">After we free up some extra room in your budget or if your budget is already in great
+              shape we will suggest some local charities and ways to give back to your local community.</p>
           </div>
         </div>
       </div>
 
-        <aside class="bg-success rounded-lg p-4 p-sm-5 mt-5">
-          <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-              <div class="mb-4 mb-xl-0">
-                  <div class="fs-3 fw-bold text-white">Let us save you money!</div>
-                  <div class="text-white-50">Click the button below to sign up or click login at top of page.</div>
-              </div>
-              <div class="ms-xl-4">
-                      <button class="btn btn-outline-light" data-tab-target="#signup" type="button">Sign up</button>
-              </div>
+      <aside class="bg-success rounded-lg p-4 p-sm-5 mt-5">
+        <div
+          class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+          <div class="mb-4 mb-xl-0">
+            <div class="fs-3 fw-bold text-white">Let us save you money!</div>
+            <div class="text-white-50">Click the button below to sign up or click login at top of page.</div>
           </div>
+          <div class="ms-xl-4">
+            <button class="btn btn-outline-light" data-tab-target="#signup" type="button">Sign up</button>
+          </div>
+        </div>
       </aside>
     </div>
 
-    <div id="overview" class="container-fluid active" data-tab-content >
-      <center>
-        <button id="delete-button" type="submit" class="btn btn-primary">DELETE ACCOUNT</button>
-      </center>
+    <div id="overview" class="container-fluid active" data-tab-content>
 
       <div class="jumbotron jumbotron-fluid ">
         <div class="container">
-          
+
           <h1 class="display-4">Overview</h1>
           <br>
 
           <div class="row">
             <div class="col">
-                <div class="card shadow">
-                    <div class="card-body">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase">
-                        Monthly Budget</div>
-                    <div class="h5 font-weight-bold" id="totalBudget">0</div>
-                    </div>
+              <div class="card shadow">
+                <div class="card-body">
+                  <div class="text-xs font-weight-bold text-primary text-uppercase">
+                    Budget</div>
+                  <div class="h5 font-weight-bold" id="totalBudget">0</div>
                 </div>
+              </div>
             </div>
 
             <div class="col">
               <div class="card shadow">
-                  <div class="card-body">
-                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
-                        Remaining Budget</div>
-                    <div id="currentBalance" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                  </div>
-              </div>
-          </div>
-    
-            <div class="col">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Total Expenses</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                    </div>
+                <div class="card-body">
+                  <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
+                    Remaining Budget</div>
+                  <div id="currentBalance" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                 </div>
+              </div>
             </div>
+
+            <div class="col">
+              <div class="card shadow">
+                <div class="card-body">
+                  <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                    Total Expenses</div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div class="container mb-5 mt-5">
+
+        <div class="card shadow">
+          <div class="container-fluid mb-4">
+            <h5 class="text-center mb-4 mt-3">Add/Remove income here!</h5>
+            <div class="row">
+              <div class="col-sm">
+                <label for="money">Add Income Amount</label>
+                <input type="number" class="form-control" id="money">
+                <button class="btn btn-primary mt-3" onclick="addMoney()" id="addMoney">Add income</button>
+              </div>
+              <div class="col-sm">
+                <label for="money">Remove Income Amount</label>
+                <input type="number" class="form-control" id="money">
+                <button class="btn btn-danger mt-3" onclick="addMoney()" id="addMoney">Remove income</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="container">
+
+        <div class="row pb-3">
+
+          <div class="card shadow col pb-4 m-2">
+            <div class="container-fluid">
+              <h5 class="text-center mb-4 pt-2">Add expenses here!</h5>
+              <div class="row">
+                <div class="form-group col-sm">
+                  <label for="expenseName">Expense Name</label>
+                  <input type="text" class="form-control" id="expenseName">
+
+                </div>
+                <div class="form-group col-sm">
+                  <label for="expenseAmount">Expense Amount</label>
+                  <input type="number" class="form-control" id="expenseAmount">
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="addExpense()" id="addExpense">Add expense</button>
+            </div>
+          </div>
+
+
+          <div class="card shadow col pb-4 m-2">
+            <div class="container-fluid">
+              <h5 class="text-center mb-4 pt-2">Remove expenses here!</h5>
+              <div class="row">
+                <div class="form-group col-sm">
+                  <label for="expenseName">Expense Name</label>
+                  <input type="text" class="form-control" id="expenseName">
+
+                </div>
+                <div class="form-group col-sm">
+                  <label for="expenseAmount">Expense Amount</label>
+                  <input type="number" class="form-control" id="expenseAmount">
+                </div>
+              </div>
+              <button class="btn btn-danger" onclick="removeExpense()" id="removeExpense">Remove expense</button>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+      <div class="container-fluid text-center pb-3">
+        <button class="btn btn-primary" onclick="removeExpense()" id="readAccount">Account Details</button>
+        <button class="btn btn-secondary" id="updateAccount">Update Account</button>
+        <button class="btn btn-danger" id="deleteAccount">Delete Account</button>
+      </div>
 
 
 
 
-  
+
       <center>
         <div id="flex">
-          <div class="budget">
-            <h2>Total Budget: <span id="totalBudget"> 0</span></h2>
-            <h2>Current Balance: <span id="currentBalance"> 0</span></h2>
-            <br>
+          <!-- <div class="budget">
             <h2>Add money to budget</h2>
             <input type="number" placeholder="add money" id="money">
             <button onclick="addMoney()" id="addMoney">Add Money</button>
@@ -159,7 +235,7 @@
             <input type="text" placeholder="expense name" id="expenseName"> <br><br>
             <input type="number" placeholder="add expense" id="expenseAmount"> <br><br><br>
             <button onclick="addExpense()" id="addExpense">Add Expense</button>
-          </div>
+          </div> -->
           <div class="addedExpenses">
             <h2>Added Expenses</h2>
             <div id="addedExpenses">
@@ -171,6 +247,8 @@
       <div>
         <h3 id="Second_Point_Header" class="size">Your Information</h3>
         <form>
+          <label for="email">Your Email: &nbsp&nbsp&nbsp</label>
+          <input type="text" id="email" />
           <label for="name">Your Name: &nbsp&nbsp&nbsp</label>
           <input type="text" id="name" />
           <label for="income">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Income:
@@ -186,7 +264,7 @@
           <input type="text" id="job" />
           <label for="savings">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Weekly Savings:
             &nbsp&nbsp&nbsp&nbsp</label>
-          <input type="text" id="savings" />
+          <input type="text" id="saving" />
           <br /><br />
         </form>
       </div>
@@ -252,8 +330,8 @@
                 budget we will supply you with various cost cutting measures such as local coupons and changes to your
                 current budget.</p>
             </div>
-            <div id = "home" data-tab-content></div>
-          </form>
+            <div id="home" data-tab-content></div>
+            </form>
           </div>
         </div>
       </section>
@@ -292,7 +370,7 @@
                 <h5 class="fw-bolder">Cecillia Chan</h5>
                 <div class="fst-italic text-muted">University of Massachusetts Amherst '23</div>
               </div>
-            </form>
+              </form>
             </div>
           </div>
         </div>

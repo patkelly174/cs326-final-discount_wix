@@ -12,8 +12,10 @@ const address = document.getElementById('signup-address');
 const city = document.getElementById('signup-city');
 const state = document.getElementById('signup-state');
 const zip = document.getElementById('signup-zip');
-const del = document.getElementById('delete-button');
+const del = document.getElementById('deleteAccount');
 
+const updateButton = document.getElementById('updateAccount');
+const loginButton = document.getElementById('login-button');
 
 signup.addEventListener('click', async () => {
     const option = {
@@ -42,3 +44,23 @@ del.addEventListener('click', async () => {
     await fetch('/deleteAccount', options);
 });
 
+updateButton.addEventListener('click', async ()=>{
+    const response = await fetch(`/readAccount?email=${currentEmail.value}`);
+    const json = await response.json();
+    console.log(json);
+    const options =  {
+        method: "POST",
+        body: JSON.stringify({
+            email: json[0].email,
+            password: json[0].password,
+            name: nameText.value,
+            job: job.value,
+            income: income.value,
+            rent: rent.value,
+            spending: spending.value,
+            saving: saving.value
+        }),
+        headers: { "Content-type": "application/json" }
+    };
+   await fetch('/updateAccount', options);
+});
