@@ -237,9 +237,9 @@ body {
   transition: 1s all;
 }
 
-#expenseName, #expenseAmount {
+/* #expenseName, #expenseAmount {
   width: 280px;
-}
+} */
 
 .budget #addExpense {
   width: 100px;
