@@ -49,4 +49,4 @@ When we click "Delete Account", the login account is deleted from our system.
 The account is deleted in our account.json.
 
 # Website:
-Heroku was giving all of or team members errors while creating the website. In addition, the status page of the Heroku shows it was experiencing issues.
+https://duality-app.herokuapp.com/client/
