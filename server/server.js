@@ -36,6 +36,7 @@ async function deleteAccount(email) {
     }
     userDirectory = userDirectory.filter(obj => obj.email !== email);
     await writeFile(ACCOUNT_FILE, JSON.stringify(userDirectory));
+    await writeFile(CURRENT_ACCOUNT, JSON.stringify([]));
   } catch (err) {
     console.error('Error writing to file: ', err);
     return undefined;
@@ -68,6 +69,7 @@ async function updateAccount(info, email, password){
     account[0].spending = info.spending;
     account[0].saving = info.saving;
     await writeFile(ACCOUNT_FILE, JSON.stringify(account));
+    await writeFile(CURRENT_ACCOUNT, JSON.stringify(account));
     return account;
   } catch (err) {
     console.error('Error reading file: ', err);
