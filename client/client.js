@@ -13,7 +13,9 @@ const city = document.getElementById('signup-city');
 const state = document.getElementById('signup-state');
 const zip = document.getElementById('signup-zip');
 const del = document.getElementById('deleteAccount');
+const loginEmail = document.getElementById('login-email');
 
+const detailsButton = document.getElementById('readAccount');
 const updateButton = document.getElementById('updateAccount');
 const loginButton = document.getElementById('login-button');
 
@@ -43,6 +45,25 @@ del.addEventListener('click', async () => {
     };
     await fetch('/deleteAccount', options);
 });
+
+loginButton.addEventListener('click', async()=>{
+    const response = await fetch(`/readAccount?email=${loginEmail.value}`);
+    //activeAccount = await response.json();
+});
+
+detailsButton.addEventListener('click', async()=>{
+    const response = await fetch(`/readCurrent`);
+    let data = await response.json();
+    currentEmail.value = data.email;
+    nameText.value = data.name;
+    income.value = data.income;
+    rent.value = data.rent;
+    spending.value = data.spending;
+    job.value = data.job;
+    saving.value = data.saving;
+});
+
+
 
 updateButton.addEventListener('click', async ()=>{
     const response = await fetch(`/readAccount?email=${currentEmail.value}`);

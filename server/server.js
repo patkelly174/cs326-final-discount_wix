@@ -4,6 +4,7 @@ import { readFile, writeFile } from 'fs/promises';
 
 
 const ACCOUNT_FILE = 'account.json';
+const CURRENT_ACCOUNT = 'current.json';
 
 // Returns a function that will read a score file.
 
@@ -46,7 +47,9 @@ async function readAccount(email) {
   try {
     const data = await readFile(ACCOUNT_FILE, 'utf8');
     const userDirectory = JSON.parse(data);
-    return userDirectory.filter(obj => obj.email === email);
+    let account = userDirectory.filter(obj => obj.email === email);
+    await writeFile(CURRENT_ACCOUNT, JSON.stringify(account));
+    return account;
   } catch (err) {
     console.error('Error reading file: ', err);
     return undefined;
@@ -66,6 +69,16 @@ async function updateAccount(info, email, password){
     account[0].saving = info.saving;
     await writeFile(ACCOUNT_FILE, JSON.stringify(account));
     return account;
+  } catch (err) {
+    console.error('Error reading file: ', err);
+    return undefined;
+  }
+}
+
+async function readCurrent(){
+  try {
+    const data = await readFile(CURRENT_ACCOUNT, 'utf8');
+    return JSON.parse(data)[0];
   } catch (err) {
     console.error('Error reading file: ', err);
     return undefined;
@@ -110,6 +123,13 @@ app.post('/deleteAccount', async (req, res) => {
 app.get('/readAccount', async (req, res) => {
   const account = await readAccount(req.query.email);
   res.status(200).json(account);
+  return account;
+});
+
+app.get('/readCurrent', async (req, res) => {
+  const account = await readCurrent();
+  res.status(200).json(account);
+  return account;
 });
 
 
