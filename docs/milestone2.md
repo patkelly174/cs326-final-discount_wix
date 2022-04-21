@@ -19,3 +19,16 @@
 
 
 # Screenshots:
+![Screen Shot 2022-04-20 at 9 17 48 PM](https://user-images.githubusercontent.com/11319543/164352940-a8212aa5-fd10-4370-9fa0-de138ff1489b.png)
+First page where it shows what this website is and what we are trying to accomplish.
+
+![Screen Shot 2022-04-20 at 9 17 54 PM](https://user-images.githubusercontent.com/11319543/164353041-0f926cf1-a7c5-47e7-a08d-e4e2a4072a21.png)
+Overview page once Overview is clicked which is located on the top right corner of the web page. It shows all the budget related things where you can view and update.
+
+![Screen Shot 2022-04-20 at 9 17 57 PM](https://user-images.githubusercontent.com/11319543/164353196-2db70591-273e-4415-b9c2-8883a0074cb4.png)
+Login page where you can type in your email and password.
+
+![Screen Shot 2022-04-20 at 9 17 58 PM](https://user-images.githubusercontent.com/11319543/164353241-64d2f48f-a506-4602-8453-570f2645bc5a.png)
+Sign up page where you can create an account for our website.
+
+
