@@ -12,6 +12,20 @@ function addMoney() {
     }
 }
 
+// function removeMoney() {
+//     let totalBudget = parseInt(document.getElementById("totalBudget").innerHTML);
+//     let currentBalance = parseInt(document.getElementById("currentBalance").innerHTML);
+//     let money = parseInt(document.getElementById("money").value);
+//     if(money === "" || isNaN(money)) {
+//         alert("Please add money");
+//     } else {
+//         totalBudget -= money;
+//         currentBalance -= money;
+//         document.getElementById("totalBudget").innerHTML = totalBudget;
+//         document.getElementById("currentBalance").innerHTML = currentBalance;
+//     }
+// }
+
 function addExpense() {
     let currentBalance = parseInt(document.getElementById("currentBalance").innerHTML);
     let expenseName = document.getElementById("expenseName").value;
