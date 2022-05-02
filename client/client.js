@@ -1,3 +1,5 @@
+import * as crud from './crud.js';
+
 const currentEmail = document.getElementById('email');
 const email = document.getElementById('signup-email');
 const password = document.getElementById('signup-password');
