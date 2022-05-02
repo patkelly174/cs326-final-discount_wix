@@ -1,5 +1,5 @@
 import express from 'express';
-import { AccountDatabase } from './account-db.js';
+import { AccountDatabase } from './accounts-db.js';
 
 class AccountServer {
   constructor(dburl) {
