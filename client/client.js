@@ -20,68 +20,29 @@ const updateButton = document.getElementById('updateAccount');
 const loginButton = document.getElementById('login-button');
 
 signup.addEventListener('click', async () => {
-    const option = {
-        method: "POST",
-        body: JSON.stringify({
-            email: email.value,
-            password: password.value,
-            address: address.value,
-            city: city.value,
-            state: state.value,
-            zip: zip.value
-        }),
-        headers: {"Content-type": "application/json"}
-    };
-    const response = await fetch('/createAccount', option);
+   await crud.createAccount(email.value, password.value, address.value, city.value, state.value, zip.value, "none", "none", 0, 0, 0, 0);
 });
 
 del.addEventListener('click', async () => {
-    const options =  {
-        method: "POST",
-        body: JSON.stringify({
-            email: currentEmail.value,
-        }),
-        headers: { "Content-type": "application/json" }
-    };
-    await fetch('/deleteAccount', options);
+   await crud.removeAccount(currentEmail.value);
 });
 
 loginButton.addEventListener('click', async()=>{
-    const response = await fetch(`/readAccount?email=${loginEmail.value}`);
-    //activeAccount = await response.json();
+    const rows = await crud.readAccount(loginEmail.value);
+    currentEmail.value = rows[0].email
+    
 });
 
 detailsButton.addEventListener('click', async()=>{
-    const response = await fetch(`/readCurrent`);
-    let data = await response.json();
-    currentEmail.value = data.email;
-    nameText.value = data.name;
-    income.value = data.income;
-    rent.value = data.rent;
-    spending.value = data.spending;
-    job.value = data.job;
-    saving.value = data.saving;
+    const rows = await crud.readAccount(currentEmail.value);
+    nameText.value = rows[0].name;
+    income.value = rows[0].income;
+    rent.value = rows[0].rent;
+    spending.value = rows[0].spending;
+    job.value = rows[0].job;
+    saving.value= saving[0].saving;
 });
 
-
-
 updateButton.addEventListener('click', async ()=>{
-    const response = await fetch(`/readAccount?email=${currentEmail.value}`);
-    const json = await response.json();
-    console.log(json);
-    const options =  {
-        method: "POST",
-        body: JSON.stringify({
-            email: json[0].email,
-            password: json[0].password,
-            name: nameText.value,
-            job: job.value,
-            income: income.value,
-            rent: rent.value,
-            spending: spending.value,
-            saving: saving.value
-        }),
-        headers: { "Content-type": "application/json" }
-    };
-   await fetch('/updateAccount', options);
+    const rows = await crud.updateAccount(currentEmail.value, nameText.value, income.value, rent.value, spending.value, job.value, saving.value);
 });
