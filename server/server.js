@@ -36,7 +36,7 @@ class AccountServer {
     this.app.delete('/removeAccount', async (req, res) => {
       try {
         const { email } = req.query;
-        const entry = await self.db.removeAccount(Account);
+        const entry = await self.db.removeAccount(email);
         res.send(entry);
       } catch (err) {
         console.log(err);
@@ -46,8 +46,8 @@ class AccountServer {
 
     this.app.post('/updateAccount', async (req, res) => {
       try {
-        const { email, password, name, job, rent, income, spending, saving } = req.query;
-        const entry = await self.db.updateAccount(email, password, name, job, rent, income, spending, saving);
+        const { email, name, job, rent, income, spending, saving } = req.query;
+        const entry = await self.db.updateAccount(email, name, job, rent, income, spending, saving);
         res.send(entry);
       } catch (err) {
         res.status(500).send(err);

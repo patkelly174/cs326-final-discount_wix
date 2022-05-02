@@ -46,5 +46,5 @@ detailsButton.addEventListener('click', async()=>{
 });
 
 updateButton.addEventListener('click', async ()=>{
-    const rows = await crud.updateAccount(currentEmail.value, nameText.value, income.value, rent.value, spending.value, job.value, saving.value);
+    await crud.updateAccount(currentEmail.value, nameText.value, job.value, rent.value, income.value, spending.value, saving.value);
 });

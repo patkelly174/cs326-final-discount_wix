@@ -66,10 +66,10 @@ export class AccountDatabase {
       return res.rows;
   }
 
-  async updateAccount(email, password, name, job, rent, income, spending, saving) {
+  async updateAccount(email, name, job, rent, income, spending, saving) {
     const queryText =
-      'UPDATE accoutTable SET password = $2, name = $3, job = $4, rent = $5, income = $6, spending = $7, saving = $8 WHERE email = $1 RETURNING *';
-    const res = await this.client.query(queryText, [email, password, name, job, rent, income, spending, saving]);
+      'UPDATE accountTable SET name = $2, job = $3, rent = $4, income = $5, spending = $6, saving = $7 WHERE email = $1 RETURNING *';
+    const res = await this.client.query(queryText, [email, name, job, rent, income, spending, saving]);
     return res.rows;
   }
 }
