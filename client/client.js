@@ -42,7 +42,7 @@ detailsButton.addEventListener('click', async()=>{
     rent.value = rows[0].rent;
     spending.value = rows[0].spending;
     job.value = rows[0].job;
-    saving.value= saving[0].saving;
+    saving.value= rows[0].saving;
 });
 
 updateButton.addEventListener('click', async ()=>{

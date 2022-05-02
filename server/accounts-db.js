@@ -28,6 +28,7 @@ export class AccountDatabase {
           city varchar(30),
           state varchar(30),
           zip varchar(10),
+          name varchar(30),
           job varchar(30),
           rent integer,
           income integer,
