@@ -256,6 +256,22 @@ body {
   transition: 1s all;
 }
 
+.budget #removeExpense {
+  width: 100px;
+  padding: 7px;
+  border-radius: 10px 0px;
+  border: none;
+  outline: none;
+  margin-left: 90px;
+}
+
+.budget #removeExpense:hover {
+  background-color: bisque;
+  color: white;
+  transition: 1s all;
+}
+
+
 #addedExpenses {
   font-size: 30px;
   line-height: 1.5;
