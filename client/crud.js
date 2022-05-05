@@ -37,3 +37,25 @@ export async function updateAccount(email, name, job, rent, income, spending, sa
   const data = await response.json();
   return data;
 }
+
+export async function spending(email, expenseName, spending) {
+  const response = await fetch(
+    `/spending?email=${email}&expenseName=${expenseName}&spending=${spending}`,
+    {
+      method: 'POST',
+    }
+  );
+  const data = await response.json();
+  return data;
+}
+
+export async function getSpending(email) {
+  const response = await fetch(
+    `/getSpending?email=${email}`,
+    {
+      method: 'GET',
+    }
+  );
+  const data = await response.json();
+  return data;
+}

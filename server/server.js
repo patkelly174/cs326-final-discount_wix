@@ -53,6 +53,27 @@ class AccountServer {
         res.status(500).send(err);
       }
     });
+
+    this.app.post('/spending', async (req, res) => {
+      try {
+        const { email, expenseName, spending } = req.query;
+        const entry = await self.db.spending(email, expenseName, spending);
+        res.send(entry);
+      } catch (err) {
+        res.status(500).send(err);
+      }
+    });
+
+    this.app.get('/getSpending', async (req, res) => {
+      try {
+        const { email } = req.query;
+        const entry = await self.db.getSpending(email);
+        res.send(entry);
+      } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
+      }
+    });
   }
 
   async initDb() {

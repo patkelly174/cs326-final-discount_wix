@@ -16,10 +16,13 @@ const state = document.getElementById('signup-state');
 const zip = document.getElementById('signup-zip');
 const del = document.getElementById('deleteAccount');
 const loginEmail = document.getElementById('login-email');
+const expenseName = document.getElementById('expenseName');
+const expense = document.getElementById('expenseAmount');
 
 const detailsButton = document.getElementById('readAccount');
 const updateButton = document.getElementById('updateAccount');
 const loginButton = document.getElementById('login-button');
+const spendButton = document.getElementById('addExpense');
 
 signup.addEventListener('click', async () => {
    await crud.createAccount(email.value, password.value, address.value, city.value, state.value, zip.value, "none", "none", 0, 0, 0, 0);
@@ -43,8 +46,15 @@ detailsButton.addEventListener('click', async()=>{
     spending.value = rows[0].spending;
     job.value = rows[0].job;
     saving.value= rows[0].saving;
+
+    const spending = await crud.getSpending(currentEmail.value);
 });
 
 updateButton.addEventListener('click', async ()=>{
     await crud.updateAccount(currentEmail.value, nameText.value, job.value, rent.value, income.value, spending.value, saving.value);
 });
+
+spendButton.addEventListener('click', async()=>{
+    await crud.spending(currentEmail.value, expenseName.value, expense.value);
+});
+

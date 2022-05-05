@@ -36,6 +36,13 @@ export class AccountDatabase {
           saving integer,
           primary key(email)
       );
+
+      create table if not exists spendingTable(
+          email varchar(30),
+          expenseName varchar(50),
+          spending integer,
+          date varchar(30)
+      );
     `;
     const res = await this.client.query(queryText);
   }
@@ -71,5 +78,19 @@ export class AccountDatabase {
       'UPDATE accountTable SET name = $2, job = $3, rent = $4, income = $5, spending = $6, saving = $7 WHERE email = $1 RETURNING *';
     const res = await this.client.query(queryText, [email, name, job, rent, income, spending, saving]);
     return res.rows;
+  }
+
+  async spending(email, expenseName, spending){
+    let date = new Date();
+    const queryText = 
+      'INSERT INTO spendingTable (email, expenseName, spending, date)';
+    const res = await this.client.query(queryText, [email, expenseName, spending, date]);
+  }
+
+  async getSpending(email){
+    let date = new Date();
+    const queryText = 
+      'SELECT * FROM spendingTable WHERE email = $1';
+    const res = await this.client.query(queryText, [email]);
   }
 }
