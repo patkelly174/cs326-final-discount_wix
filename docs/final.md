@@ -1,4 +1,4 @@
-1. Title:
+1. Title: Duality App
 
 2. Subtitle:
 
@@ -14,11 +14,11 @@
 
 8. Database:
 
-9. URL Routes/Mappings:
+9. URL Routes/Mappings: 
 
-10. Authentication/Authorization:
+10. Authentication/Authorization: 
 
 11. Division of Labor:
 
-12. Conclusion:
+12. Conclusion: 
 
