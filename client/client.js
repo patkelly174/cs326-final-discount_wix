@@ -16,8 +16,8 @@ const state = document.getElementById('signup-state');
 const zip = document.getElementById('signup-zip');
 const del = document.getElementById('deleteAccount');
 const loginEmail = document.getElementById('login-email');
-const expenseName = document.getElementById('expenseName');
-const expense = document.getElementById('expenseAmount');
+const expenseName = document.getElementById('expenseName_1');
+const expense = document.getElementById('expenseAmount_1');
 
 const detailsButton = document.getElementById('readAccount');
 const updateButton = document.getElementById('updateAccount');
