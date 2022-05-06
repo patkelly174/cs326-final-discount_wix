@@ -67,7 +67,7 @@ class AccountServer {
     this.app.get('/getSpending', async (req, res) => {
       try {
         const { email } = req.query;
-        const entry = await self.db.getSpending(email);
+        const entry = await self.db.getSpending(email);//
         res.send(entry);
       } catch (err) {
         console.log(err);
