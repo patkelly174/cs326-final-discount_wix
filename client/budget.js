@@ -30,6 +30,7 @@ function addExpense() {
     let currentBalance = parseInt(document.getElementById("currentBalance").innerHTML);
     let expenseName = document.getElementById("expenseName_1").value;
     let expenseAmount = parseInt(document.getElementById("expenseAmount_1").value);
+    let totalExpense = parseInt(document.getElementById("totalExpense").innerHTML);
     if(expenseName.length === "") {
         alert("Please add expense name");
     } else if(expenseAmount === "" || isNaN(expenseAmount)) {
@@ -39,6 +40,8 @@ function addExpense() {
         document.getElementById("currentBalance").innerHTML = currentBalance;
         let para = document.createElement('p');
         para.innerHTML = `Expense Name : ${expenseName} <br> Expense Amount: ${expenseAmount}`;
+        totalExpense += expenseAmount;
+        document.getElementById("totalExpense").innerHTML = totalExpense;
         document.getElementById("addedExpenses").appendChild(para);
     } else {
         alert("Amount is higher than your current balance");
@@ -49,6 +52,7 @@ function removeExpense() {
     let currentBalance = parseInt(document.getElementById("currentBalance").innerHTML);
     let expenseName = document.getElementById("expenseName_2").value;
     let expenseAmount = parseInt(document.getElementById("expenseAmount_2").value);
+    let totalExpense = parseInt(document.getElementById("totalExpense").innerHTML);
     if(expenseName.length === "") {
         alert("Please add expense name");
     } else if(expenseAmount === "" || isNaN(expenseAmount)) {
@@ -58,7 +62,9 @@ function removeExpense() {
         document.getElementById("currentBalance").innerHTML = currentBalance;
         let para = document.createElement('p');
         para.innerHTML = `Expense Name : ${expenseName} <br> Expense Amount: ${expenseAmount}`;
-        document.getElementById("addedExpenses").appendChild(para);
+        totalExpense -= expenseAmount;
+        document.getElementById("totalExpense").innerHTML = totalExpense;
+        document.getElementById("removedExpenses").appendChild(para);
     } else {
         alert("Amount is lower than your current balance");
     }

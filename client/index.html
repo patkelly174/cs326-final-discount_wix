@@ -135,7 +135,7 @@
                 <div class="card-body">
                   <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                     Total Expenses</div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                  <div id="totalExpense" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                 </div>
               </div>
             </div>
@@ -227,18 +227,14 @@
 
       <center>
         <div id="flex">
-          <!-- <div class="budget">
-            <h2>Add money to budget</h2>
-            <input type="number" placeholder="add money" id="money">
-            <button onclick="addMoney()" id="addMoney">Add Money</button>
-            <h2>Add Expenses</h2>
-            <input type="text" placeholder="expense name" id="expenseName"> <br><br>
-            <input type="number" placeholder="add expense" id="expenseAmount"> <br><br><br>
-            <button onclick="addExpense()" id="addExpense">Add Expense</button>
-          </div> -->
           <div class="addedExpenses">
             <h2>Added Expenses</h2>
             <div id="addedExpenses">
+            </div>
+          </div>
+          <div class="removedExpenses">
+            <h2>Removed Expenses</h2>
+            <div id="removedExpenses">
             </div>
           </div>
         </div>
