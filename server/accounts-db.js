@@ -40,8 +40,7 @@ export class AccountDatabase {
       create table if not exists spendingTable(
           email varchar(30),
           expenseName varchar(50),
-          spending integer,
-          date varchar(30)
+          spending integer
       );
     `;
     const res = await this.client.query(queryText);
@@ -81,14 +80,14 @@ export class AccountDatabase {
   }
 
   async spending(email, expenseName, spending){
-    let date = new Date();
+    //let date = new Date();
     const queryText = 
-      'INSERT INTO spendingTable (email, expenseName, spending, date)';
-    const res = await this.client.query(queryText, [email, expenseName, spending, date]);
+      'INSERT INTO spendingTable (email, expenseName, spending)';
+    const res = await this.client.query(queryText, [email, expenseName, spending]);
   }
 
   async getSpending(email){
-    let date = new Date();
+    //let date = new Date();
     const queryText = 
       'SELECT * FROM spendingTable WHERE email = $1';
     const res = await this.client.query(queryText, [email]);
