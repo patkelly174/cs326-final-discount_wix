@@ -86,7 +86,7 @@ export class AccountDatabase {
     const res = await this.client.query(queryText, [email, expenseName, spending]);
   }
 
-  async getSpending(email){
+  async getSpending(email){//
     //let date = new Date();
     const queryText = 
       'SELECT * FROM spendingTable WHERE email = $1';
