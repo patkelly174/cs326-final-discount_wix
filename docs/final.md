@@ -12,7 +12,7 @@
 
 7. APIs:
 
-We did not use any APIs, but if did we would have taken in an individual interest and availability and use our automated technology to find a job most suited for them. Another function we would have is find local deals for the user. 
+We did not use any APIs, but if we did we would have taken in an individual interest and availability and use our automated technology to find a job most suited for them. Another function we would have is find local deals for the user. 
 
 8. Database:
 
