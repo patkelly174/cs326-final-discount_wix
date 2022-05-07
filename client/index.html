@@ -48,7 +48,7 @@
 
   <div class="tab-content">
     <br>
-    <div id="home" data-tab-content class="active">
+    <div id="home" data-tab-content>
       <div class="jumbotron">
         <h1 class="display-4">Welcome to Duality!</h1>
         <p class="lead">This webiste's main goal is to help you save money! We pride ourselves in helping the common
@@ -101,7 +101,7 @@
       </aside>
     </div>
 
-    <div id="overview" class="container-fluid" data-tab-content>
+    <div id="overview" class="container-fluid active" data-tab-content>
 
       <div class="jumbotron jumbotron-fluid ">
         <div class="container">
@@ -135,7 +135,7 @@
                 <div class="card-body">
                   <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                     Total Expenses</div>
-                  <div id="totalExpense" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                  <div id = "totalExpense" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@
                 <button class="btn btn-primary mt-3" onclick="addMoney()" id="addMoney">Add income</button>
               </div>
               <div class="col-sm">
-                <label for="money_1">Remove Income Amount</label>
+                <label for="money">Remove Income Amount</label>
                 <input type="number" class="form-control" id="money_1">
                 <button class="btn btn-danger mt-3" onclick="removeMoney()" id="removeMoney">Remove income</button>
               </div>
@@ -187,6 +187,7 @@
                 </div>
               </div>
               <button class="btn btn-primary" onclick="addExpense()" id="addExpense">Add expense</button>
+              <button class="btn btn-primary" id = "spending">Add to Spending</button>
             </div>
           </div>
 
@@ -210,6 +211,9 @@
           </div>
 
         </div>
+
+
+
       </div>
 
       <div class="container-fluid text-center pb-3">
@@ -218,16 +222,24 @@
         <button class="btn btn-danger" id="deleteAccount">Delete Account</button>
       </div>
 
+
+
+
+
       <center>
         <div id="flex">
+          <!-- <div class="budget">
+            <h2>Add money to budget</h2>
+            <input type="number" placeholder="add money" id="money">
+            <button onclick="addMoney()" id="addMoney">Add Money</button>
+            <h2>Add Expenses</h2>
+            <input type="text" placeholder="expense name" id="expenseName"> <br><br>
+            <input type="number" placeholder="add expense" id="expenseAmount"> <br><br><br>
+            <button onclick="addExpense()" id="addExpense">Add Expense</button>
+          </div> -->
           <div class="addedExpenses">
             <h2>Added Expenses</h2>
             <div id="addedExpenses">
-            </div>
-          </div>
-          <div class="removedExpenses">
-            <h2>Removed Expenses</h2>
-            <div id="removedExpenses">
             </div>
           </div>
         </div>
@@ -257,6 +269,24 @@
           <br /><br />
         </form>
       </div>
+      <h4 id="Fifth_Point_Header" class="size">Spending Details</h4>
+      <br />
+      <div id="spending-details"></div>
+      <br />
+      <button class="btn btn-primary" id="spendStuff">Spending Details</button>
+      <br /><br />
+      <h5 id="Third_Point_Header" class="size">Job Suggestions</h5>
+      <br />
+      <p>TBD...</p>
+      <br />
+
+      <h6 id="Fourth_Point_Header" class="size">Local Grocery Deals</h6>
+      <br />
+      <p>TBD...</p>
+      <br />
+      <center>
+        <button class="btn btn-danger" id="logout">Log Out</button>
+      </center>
 
     </div>
 
@@ -342,7 +372,7 @@
             </div>
             <div class="col mb-5">
               <div class="text-center">
-                <img class="img-fluid rounded-circle mb-4 px-4" src="" alt="..." />
+                <img class="img-fluid rounded-circle mb-4 px-4" src="../media/cece.jpg" alt="..." />
                 <h5 class="fw-bolder">Cecillia Chan</h5>
                 <div class="fst-italic text-muted">University of Massachusetts Amherst '23</div>
               </div>

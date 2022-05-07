@@ -38,12 +38,13 @@ export class AccountDatabase {
       );
 
       create table if not exists spendingTable(
-          email varchar(30),
-          expenseName varchar(50),
-          spending integer
-      );
+        email varchar(30),
+        expenseName varchar(50),
+        spending varchar(30),
+        date varchar(30)
+    );
     `;
-    const res = await this.client.query(queryText);
+    const res = await this.client.query(queryText);//
   }
 
   // Close the pool.
@@ -80,10 +81,11 @@ export class AccountDatabase {
   }
 
   async spending(email, expenseName, spending){
-    //let date = new Date();
+    let date = new Date();
     const queryText = 
-      'INSERT INTO spendingTable (email, expenseName, spending)';
-    const res = await this.client.query(queryText, [email, expenseName, spending]);
+      'INSERT INTO spendingTable (email, expenseName, spending, date) VALUES ($1, $2, $3, $4) RETURNING *';
+    const res = await this.client.query(queryText, [email, expenseName, spending, date]);
+    return res.rows;
   }
 
   async getSpending(email){//
@@ -91,5 +93,6 @@ export class AccountDatabase {
     const queryText = 
       'SELECT * FROM spendingTable WHERE email = $1';
     const res = await this.client.query(queryText, [email]);
+    return res.rows;
   }
 }

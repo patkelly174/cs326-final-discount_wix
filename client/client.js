@@ -22,7 +22,27 @@ const expense = document.getElementById('expenseAmount_1');
 const detailsButton = document.getElementById('readAccount');
 const updateButton = document.getElementById('updateAccount');
 const loginButton = document.getElementById('login-button');
-const spendButton = document.getElementById('addExpense');
+const spendButton = document.getElementById('spending');
+const spendingsButton = document.getElementById('spendStuff');
+const logOut = document.getElementById('logout');
+
+if (window.localStorage.getItem('currentEmail') !== null) {
+    currentEmail.value = JSON.parse(window.localStorage.getItem('currentEmail'));
+}
+if (window.localStorage.getItem('budgetTab') !== null) {
+    document.getElementById("totalBudget").innerHTML = JSON.parse(window.localStorage.getItem('budgetTab'));
+}
+if (window.localStorage.getItem('totalBudgetTab') !== null) {
+    document.getElementById("currentBalance").innerHTML = JSON.parse(window.localStorage.getItem('totalBudgetTab'));
+}
+if (window.localStorage.getItem('expenseTab') !== null) {
+    document.getElementById("totalExpense").innerHTML = JSON.parse(window.localStorage.getItem('expenseTab'));
+}
+
+logOut.addEventListener('click', async () => {
+    window.localStorage.clear();
+    window.location.reload();
+});
 
 signup.addEventListener('click', async () => {
    await crud.createAccount(email.value, password.value, address.value, city.value, state.value, zip.value, "none", "none", 0, 0, 0, 0);
@@ -34,7 +54,8 @@ del.addEventListener('click', async () => {
 
 loginButton.addEventListener('click', async()=>{
     const rows = await crud.readAccount(loginEmail.value);
-    currentEmail.value = rows[0].email
+    currentEmail.value = rows[0].email;
+    window.localStorage.setItem('currentEmail', JSON.stringify(currentEmail.value));
     
 });
 
@@ -46,8 +67,6 @@ detailsButton.addEventListener('click', async()=>{
     spending.value = rows[0].spending;
     job.value = rows[0].job;
     saving.value= rows[0].saving;
-
-    const spending = await crud.getSpending(currentEmail.value);
 });
 
 updateButton.addEventListener('click', async ()=>{
@@ -55,6 +74,21 @@ updateButton.addEventListener('click', async ()=>{
 });
 
 spendButton.addEventListener('click', async()=>{
-    await crud.spending(currentEmail.value, expenseName.value, expense.value);
+    const rows = await crud.spending(currentEmail.value, expenseName.value, expense.value);
 });
 
+spendingsButton.addEventListener('click', async()=>{
+    const rows = await crud.getSpending(currentEmail.value);
+    //console.log(rows);
+    for (let i = 0; i < rows.length; ++i){
+        let expensename = rows[i].expensename;
+        let amount = rows[i].spending;
+        let date = rows[i].date;
+        let text = "Expense Name: " + expensename + " --- " + "Amount: " + amount + 
+        " --- " + "Date: " + date;
+        let val = document.createTextNode(text);
+        let bar = document.createElement("br");
+        document.getElementById('spending-details').appendChild(val);
+        document.getElementById('spending-details').appendChild(bar);
+    }
+});
