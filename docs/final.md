@@ -54,7 +54,7 @@ Patrick Kelly:
 
 Alex Chan: Created the accountTable database which stored basic information on the user, incorporated the CRUD operations to read/update/delete/create the account, and made minor changes to web aesthetic
 
-Cecilia Chan:
+Cecilia Chan: Created the spendingTable database which stored information on the expenses of all users; added operations similar to CRUD that deals with creating rows in spendingTable and getting specific user info from spending, and made minor changes to web aesthetic and budgest.js
 
 Jinsoo Yang: Worked on the budget.js to fully being used how we want it to work.
 
