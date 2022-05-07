@@ -15,3 +15,13 @@ accountTable
 | spending | integer        | The spending of the user |
 |  saving  | integer        | The saving of the user   |
 
+
+spendingTable
+
+| Column      | Data Type      | Description              |
+|-------------|----------------|--------------------------|
+|   email     | varchar(30)(pk)| The email of the user    |
+| expenseName | varchar(50)    | Name of expense          |
+|  spending   | varchar(30)    | Expense amount           |
+|   date      | varchar(30)    | Date of expense          |
+
