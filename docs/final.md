@@ -18,7 +18,15 @@
 
 10. Authentication/Authorization: 
 
-11. Division of Labor:
+11. Division of Labor: 
+
+Patrick Kelly:
+
+Alex Chan:
+
+Cecilia Chan:
+
+Jinsoo Yang: Worked on the budget.js to fully being used how we want it to work.
 
 12. Conclusion: 
 
