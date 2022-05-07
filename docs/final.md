@@ -1,14 +1,14 @@
-1. Title: Duality App
+1. Title: 21-discount-wix
 
-2. Subtitle:
+2. Subtitle: Duality
 
 3. Semester: Spring 2022
 
-4. Overview:
+4. Overview: Our application helps people to budget their money and see their spendings 
 
 5. Team Members: Patrick Kelly, Alex Chan, Cecilia Chan, Jinsoo Yang
 
-6. User Interface:
+6. User Interface: 
 
 7. APIs:
 
