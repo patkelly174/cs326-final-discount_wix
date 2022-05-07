@@ -12,10 +12,10 @@ After inputing all relevant information our website will display your current fi
 
 #### Our Team
 
-Cecilia Chan    ---     volcarnia12
-Alex Chan       ---     alexchan8
-Patrick Kelly   ---     patkelly174
-Jinsoo Yang     ---     yonsiojnag
+      Cecilia Chan    ---     volcarnia12
+      Alex Chan       ---     alexchan8
+      Patrick Kelly   ---     patkelly174
+      Jinsoo Yang     ---     yonsiojnag
 
 #### Future Work
 
