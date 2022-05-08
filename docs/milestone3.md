@@ -1,4 +1,4 @@
-Documentation:
+# Documentation:
 
 accountTable
 
@@ -28,7 +28,7 @@ spendingTable
 |   date      | varchar(30)    | Date of expense          |
 
 
-Division of Labor:
+# Divsion of Labor:
 
 Patrick Kelly: Front end layout and design
 
