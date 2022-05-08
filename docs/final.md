@@ -57,6 +57,8 @@ spendingTable
 
 10. Authentication/Authorization: 
 
+We did not implement any authroization but it is in future work.
+
 
 11. Division of Labor: 
 
