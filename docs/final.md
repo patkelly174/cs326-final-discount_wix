@@ -57,8 +57,7 @@ spendingTable
 
 10. Authentication/Authorization: 
 
-We did not implement any authroization but it is in future work.
-
+Once users are logged in, they will be able to see the overview page.
 
 11. Division of Labor: 
 
