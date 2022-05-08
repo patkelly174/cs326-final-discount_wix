@@ -50,7 +50,7 @@ spendingTable
 
 11. Division of Labor: 
 
-Patrick Kelly:
+Patrick Kelly: Front end layout and design
 
 Alex Chan: Created the accountTable database which stored basic information on the user, incorporated the CRUD operations to read/update/delete/create the account, and made minor changes to web aesthetic
 
@@ -59,4 +59,4 @@ Cecilia Chan: Created the spendingTable database which stored information on the
 Jinsoo Yang: Worked on the budget.js to fully being used how we want it to work.
 
 12. Conclusion: 
-
+Overall I would say that this project was a great learning experience. Through the entire project lifespan there were skills and methods to be learned. Having to communicate with group members and coordinate what each individual was in charge of was a great look into what we may see in a full time position. In addition, having to use GitHub was very benefical because that is another tool that is widley used in the work force. We as a group had some inital problems using GitHub but as the project progressed and we became more used to using it this difficulty disappeared. One thing we as a group wished we knew is experience with using GitHub as a group and the common practices when it comes to making and mergeing branches.
