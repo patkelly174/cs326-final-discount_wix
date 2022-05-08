@@ -1,5 +1,7 @@
 1. Title: 21-discount-wix
 
+URL: https://duality-app.herokuapp.com
+
 2. Subtitle: Duality
 
 3. Semester: Spring 2022
