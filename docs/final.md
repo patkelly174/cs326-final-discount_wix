@@ -48,8 +48,11 @@ spendingTable
 9. URL Routes/Mappings: 
 
 /createAccount -> Create a new user account based on the data the user provides on the signup page. Also adds the new account to the database
+
 /readAccount -> Looks up a given account given an email from the database
+
 /removeAccount -> Given an email the associated account linked to the email will be removed from the database
+
 /updateAccount -> Updates a given account in the database with new data that the user provides.
 
 10. Authentication/Authorization: 
