@@ -10,6 +10,8 @@
 
 6. User Interface: 
 
+We have 5 different pages that the user can interact with. Our intial welcome page gives a general overview of our web app and gives the user multiple buttons to interact with to sign up/sign in. Then we have the login/sign in pages which the uesr can use to input their data. We then have an about page with talks about our goal as a team and also a little look into what our application does and we also have a little meet the team section. The main bulk of our web app is in the overview tab which is where the user will do most of their interactions. In the overview tab the user can view their account details, current budget, and expenses. The user can also view their account details and update and add money to budgets and expenses.
+
 7. APIs:
 
 We did not use any APIs, but if we did we would have taken in an individual interest and availability and use our automated technology to find a job most suited for them. Another function we would have is find local deals for the user. 
@@ -59,4 +61,5 @@ Cecilia Chan: Created the spendingTable database which stored information on the
 Jinsoo Yang: Worked on the budget.js to fully being used how we want it to work.
 
 12. Conclusion: 
+
 Overall I would say that this project was a great learning experience. Through the entire project lifespan there were skills and methods to be learned. Having to communicate with group members and coordinate what each individual was in charge of was a great look into what we may see in a full time position. In addition, having to use GitHub was very benefical because that is another tool that is widley used in the work force. We as a group had some inital problems using GitHub but as the project progressed and we became more used to using it this difficulty disappeared. One thing we as a group wished we knew is experience with using GitHub as a group and the common practices when it comes to making and mergeing branches.
